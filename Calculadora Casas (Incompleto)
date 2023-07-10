@@ -754,6 +754,11 @@ public class CalculadoraMatriz extends JFrame {
 		contentPane.add(btnNewButton);
         btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+                        Menu M1 = new Menu();
+                        M1.setVisible(true);
+                            // CalculadoraMatriz CM1 = new CalculadoraMatriz();
+                            // CM1.setVisible(true);
+                            // Va en el Menu
 			}
 		});
         
