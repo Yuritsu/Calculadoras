@@ -60,6 +60,8 @@ public class CalculadoraMatriz extends JFrame {
     }
 
     public CalculadoraMatriz() {
+    	setForeground(Color.BLACK);
+    	setBackground(Color.BLACK);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 562, 505);
         contentPane = new JPanel();
@@ -183,54 +185,72 @@ public class CalculadoraMatriz extends JFrame {
 
         // Paneles de Resultados 
         txtRes11 = new JTextField();
+        txtRes11.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes11.setForeground(Color.DARK_GRAY);
         txtRes11.setHorizontalAlignment(SwingConstants.CENTER);
         txtRes11.setColumns(10);
         txtRes11.setBounds(362, 37, 50, 28);
         contentPane.add(txtRes11);
         
         txtRes21 = new JTextField();
+        txtRes21.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes21.setForeground(Color.DARK_GRAY);
         txtRes21.setHorizontalAlignment(SwingConstants.CENTER);
         txtRes21.setColumns(10);
         txtRes21.setBounds(362, 75, 50, 28);
         contentPane.add(txtRes21);
         
         txtRes31 = new JTextField();
+        txtRes31.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes31.setForeground(Color.DARK_GRAY);
         txtRes31.setHorizontalAlignment(SwingConstants.CENTER);
         txtRes31.setColumns(10);
         txtRes31.setBounds(362, 113, 50, 28);
         contentPane.add(txtRes31);
         
         txtRes12 = new JTextField();
+        txtRes12.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes12.setForeground(Color.DARK_GRAY);
         txtRes12.setHorizontalAlignment(SwingConstants.CENTER);
         txtRes12.setColumns(10);
         txtRes12.setBounds(422, 37, 50, 28);
         contentPane.add(txtRes12);
         
         txtRes22 = new JTextField();
+        txtRes22.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes22.setForeground(Color.DARK_GRAY);
         txtRes22.setHorizontalAlignment(SwingConstants.CENTER);
         txtRes22.setColumns(10);
         txtRes22.setBounds(422, 75, 50, 28);
         contentPane.add(txtRes22);
         
         txtRes32 = new JTextField();
+        txtRes32.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes32.setForeground(Color.DARK_GRAY);
         txtRes32.setHorizontalAlignment(SwingConstants.CENTER);
         txtRes32.setColumns(10);
         txtRes32.setBounds(422, 113, 50, 28);
         contentPane.add(txtRes32);
         
         txtRes13 = new JTextField();
+        txtRes13.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes13.setForeground(Color.DARK_GRAY);
         txtRes13.setHorizontalAlignment(SwingConstants.CENTER);
         txtRes13.setColumns(10);
         txtRes13.setBounds(482, 37, 50, 28);
         contentPane.add(txtRes13);
         
         txtRes23 = new JTextField();
+        txtRes23.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes23.setForeground(Color.DARK_GRAY);
         txtRes23.setHorizontalAlignment(SwingConstants.CENTER);
         txtRes23.setColumns(10);
         txtRes23.setBounds(482, 75, 50, 28);
         contentPane.add(txtRes23);
         
         txtRes33 = new JTextField();
+        txtRes33.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes33.setForeground(Color.DARK_GRAY);
         txtRes33.setHorizontalAlignment(SwingConstants.CENTER);
         txtRes33.setColumns(10);
         txtRes33.setBounds(482, 113, 51, 28);
@@ -660,7 +680,7 @@ public class CalculadoraMatriz extends JFrame {
 } 
         });
         btnDeterm.setForeground(Color.BLUE);
-        btnDeterm.setFont(new Font("Arial", Font.BOLD, 17));
+        btnDeterm.setFont(new Font("Arial", Font.BOLD, 18));
         btnDeterm.setBackground(Color.BLACK);
         btnDeterm.setBounds(324, 348, 98, 50);
         contentPane.add(btnDeterm);
@@ -720,14 +740,11 @@ public class CalculadoraMatriz extends JFrame {
 		btnNewButton.setBackground(Color.BLACK);
 		btnNewButton.setBounds(10, 409, 522, 46);
 		contentPane.add(btnNewButton);
-        btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-                     //   Menu M1 = new Menu();
-                     //   M1.setVisible(true);
-                            // CalculadoraMatriz CM1 = new CalculadoraMatriz();
-                            // CM1.setVisible(true);
-                            // Va en el Menu
-			}
+                btnNewButton.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e) {
+                           Menu M1 = new Menu();
+                           M1.setVisible(true);
+	            }
 		});
         
         JButton btnlimpiar = new JButton("C");
@@ -916,6 +933,82 @@ public class CalculadoraMatriz extends JFrame {
         });
         
         JButton btndivision = new JButton("/");
+        btndivision.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+            	float[][] matriz1 = new float[3][3];
+                matriz1[0][0] = Float.parseFloat(txt11.getText());
+                matriz1[0][1] = Float.parseFloat(txt12.getText());
+                matriz1[0][2] = Float.parseFloat(txt13.getText());
+                matriz1[1][0] = Float.parseFloat(txt21.getText());
+                matriz1[1][1] = Float.parseFloat(txt22.getText());
+                matriz1[1][2] = Float.parseFloat(txt23.getText());
+                matriz1[2][0] = Float.parseFloat(txt31.getText());
+                matriz1[2][1] = Float.parseFloat(txt32.getText());
+                matriz1[2][2] = Float.parseFloat(txt33.getText());
+                float[][] matriz2 = new float[3][3];
+                matriz2[0][0] = Float.parseFloat(txt211.getText());
+                matriz2[0][1] = Float.parseFloat(txt212.getText());
+                matriz2[0][2] = Float.parseFloat(txt213.getText());
+                matriz2[1][0] = Float.parseFloat(txt221.getText());
+                matriz2[1][1] = Float.parseFloat(txt222.getText());
+                matriz2[1][2] = Float.parseFloat(txt223.getText());
+                matriz2[2][0] = Float.parseFloat(txt231.getText());
+                matriz2[2][1] = Float.parseFloat(txt232.getText());
+                matriz2[2][2] = Float.parseFloat(txt233.getText());
+                float determinante;
+                determinante = (matriz2[0][0]*matriz2[1][1]*matriz2[2][2])+(matriz2[1][0]*matriz2[2][1]*matriz2[0][2])+(matriz2[2][0]*matriz2[0][1] * matriz2[1][2]);
+                determinante = determinante-(matriz2[0][2]*matriz2[1][1]*matriz2[2][0])-(matriz2[1][2]*matriz2[2][1]*matriz2[0][0])-(matriz2[2][2]*matriz2[0][1]*matriz2[1][0]);
+                txtResDeter.setText(String.valueOf(determinante));
+                
+                if (determinante == 0) {
+                	
+                } else {
+                	// Girar Mattrix 2
+                    float[][] matriz2g = new float[3][3];
+                    matriz2g[0][0] = matriz2[0][0];
+                    matriz2g[1][0] = matriz2[0][1];
+                    matriz2g[2][0] = matriz2[0][2];
+                    matriz2g[0][1] = matriz2[1][0];
+                    matriz2g[1][1] = matriz2[1][1];
+                    matriz2g[2][1] = matriz2[1][2];
+                    matriz2g[0][2] = matriz2[2][0];
+                    matriz2g[1][2] = matriz2[2][1];
+                    matriz2g[2][2] = matriz2[2][2];
+                    // Resultado de la Inversa
+                    float[][] adjunta = new float[3][3];
+                    adjunta[0][0] = matriz2g[1][1] * matriz2g[2][2] - matriz2g[1][2] * matriz2g[2][1];
+                    adjunta[0][1] = matriz2g[0][2] * matriz2g[2][1] - matriz2g[0][1] * matriz2g[2][2];
+                    adjunta[0][2] = matriz2g[0][1] * matriz2g[1][2] - matriz2g[0][2] * matriz2g[1][1];
+                    adjunta[1][0] = matriz2g[1][2] * matriz2g[2][0] - matriz2g[1][0] * matriz2g[2][2];
+                    adjunta[1][1] = matriz2g[0][0] * matriz2g[2][2] - matriz2g[0][2] * matriz2g[2][0];
+                    adjunta[1][2] = matriz2g[0][2] * matriz2g[1][0] - matriz2g[0][0] * matriz2g[1][2];
+                    adjunta[2][0] = matriz2g[1][0] * matriz2g[2][1] - matriz2g[1][1] * matriz2g[2][0];
+                    adjunta[2][1] = matriz2g[0][1] * matriz2g[2][0] - matriz2g[0][0] * matriz2g[2][1];
+                    adjunta[2][2] = matriz2g[0][0] * matriz2g[1][1] - matriz2g[0][1] * matriz2g[1][0];
+                    float[][] matrizinv = new float[3][3];
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
+                        	matrizinv[i][j] = adjunta[i][j] / determinante;
+                        }
+                    }
+                    float[][] resultado = new float[3][3];
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
+               		 resultado[i][j] = matriz1[i][j] * matrizinv[i][j];    
+               		 }
+                  }
+                txtRes11.setText(String.valueOf(resultado[0][0]));
+                txtRes12.setText(String.valueOf(resultado[0][1]));
+                txtRes13.setText(String.valueOf(resultado[0][2]));
+                txtRes21.setText(String.valueOf(resultado[1][0]));
+                txtRes22.setText(String.valueOf(resultado[1][1]));
+                txtRes23.setText(String.valueOf(resultado[1][2]));
+                txtRes31.setText(String.valueOf(resultado[2][0]));
+                txtRes32.setText(String.valueOf(resultado[2][1]));
+                txtRes33.setText(String.valueOf(resultado[2][2]));  
+                }    
+        	}
+        });
         btndivision.setForeground(Color.ORANGE);
         btndivision.setFont(new Font("Arial", Font.BOLD, 18));
         btndivision.setBackground(Color.BLACK);
@@ -925,18 +1018,21 @@ public class CalculadoraMatriz extends JFrame {
         
         // Etiquetas
         JLabel lblNewLabel = new JLabel("Matriz 1");
+        lblNewLabel.setForeground(Color.BLACK);
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
         lblNewLabel.setFont(new Font("Sylfaen", Font.BOLD | Font.ITALIC, 23));
         lblNewLabel.setBounds(10, 11, 156, 28);
         contentPane.add(lblNewLabel);
         
         JLabel lblMatriz = new JLabel("Matriz 2");
+        lblMatriz.setForeground(Color.BLACK);
         lblMatriz.setHorizontalAlignment(SwingConstants.CENTER);
         lblMatriz.setFont(new Font("Sylfaen", Font.BOLD | Font.ITALIC, 23));
         lblMatriz.setBounds(184, 11, 156, 28);
         contentPane.add(lblMatriz);
         
         JLabel lblResultado = new JLabel("Resultado");
+        lblResultado.setForeground(Color.BLACK);
         lblResultado.setHorizontalAlignment(SwingConstants.CENTER);
         lblResultado.setFont(new Font("Sylfaen", Font.BOLD | Font.ITALIC, 23));
         lblResultado.setBounds(361, 11, 156, 28);
