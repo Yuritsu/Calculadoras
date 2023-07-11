@@ -1,0 +1,1041 @@
+package Grafico;
+
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
+public class CalculadoraMatriz extends JFrame {
+    private static final long serialVersionUID = 1L;
+    private JPanel contentPane;
+    private JTextField txt11;
+    private JTextField txt21;
+    private JTextField txt31;
+    private JTextField txt12;
+    private JTextField txt22;
+    private JTextField txt32;
+    private JTextField txt13;
+    private JTextField txt23;
+    private JTextField txt33;
+    private JTextField txt211;
+    private JTextField txt221;
+    private JTextField txt231;
+    private JTextField txt212;
+    private JTextField txt222;
+    private JTextField txt232;
+    private JTextField txt213;
+    private JTextField txt223;
+    private JTextField txt233;
+    private JTextField txtRes11;
+    private JTextField txtRes21;
+    private JTextField txtRes31;
+    private JTextField txtRes12;
+    private JTextField txtRes22;
+    private JTextField txtRes32;
+    private JTextField txtRes13;
+    private JTextField txtRes23;
+    private JTextField txtRes33;
+    private JTextField txtResDeter;
+    private JTextField txtResEsc;
+    
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    CalculadoraMatriz frame = new CalculadoraMatriz();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    public CalculadoraMatriz() {
+    	setForeground(Color.BLACK);
+    	setBackground(Color.BLACK);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 562, 505);
+        contentPane = new JPanel();
+        contentPane.setBackground(Color.GRAY);
+        contentPane.setForeground(Color.YELLOW);
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane);
+        contentPane.setLayout(null);
+        
+        // Paneles de Matrix 1
+        txt11 = new JTextField();
+        txt11.setHorizontalAlignment(SwingConstants.CENTER);
+        txt11.setToolTipText("");
+        txt11.setForeground(Color.BLACK);
+        txt11.setBounds(10, 37, 45, 28);
+        contentPane.add(txt11);
+        txt11.setColumns(10);
+
+        txt21 = new JTextField();
+        txt21.setHorizontalAlignment(SwingConstants.CENTER);
+        txt21.setColumns(10);
+        txt21.setBounds(10, 75, 45, 28);
+        contentPane.add(txt21);
+
+        txt31 = new JTextField();
+        txt31.setHorizontalAlignment(SwingConstants.CENTER);
+        txt31.setColumns(10);
+        txt31.setBounds(10, 113, 45, 28);
+        contentPane.add(txt31);
+
+        txt12 = new JTextField();
+        txt12.setHorizontalAlignment(SwingConstants.CENTER);
+        txt12.setColumns(10);
+        txt12.setBounds(65, 37, 45, 28);
+        contentPane.add(txt12);
+
+        txt22 = new JTextField();
+        txt22.setHorizontalAlignment(SwingConstants.CENTER);
+        txt22.setColumns(10);
+        txt22.setBounds(65, 75, 45, 28);
+        contentPane.add(txt22);
+
+        txt32 = new JTextField();
+        txt32.setHorizontalAlignment(SwingConstants.CENTER);
+        txt32.setColumns(10);
+        txt32.setBounds(65, 113, 45, 28);
+        contentPane.add(txt32);
+
+        txt13 = new JTextField();
+        txt13.setHorizontalAlignment(SwingConstants.CENTER);
+        txt13.setColumns(10);
+        txt13.setBounds(120, 37, 45, 28);
+        contentPane.add(txt13);
+
+        txt23 = new JTextField();
+        txt23.setHorizontalAlignment(SwingConstants.CENTER);
+        txt23.setColumns(10);
+        txt23.setBounds(120, 75, 45, 28);
+        contentPane.add(txt23);
+
+        txt33 = new JTextField();
+        txt33.setHorizontalAlignment(SwingConstants.CENTER);
+        txt33.setColumns(10);
+        txt33.setBounds(120, 113, 45, 28);
+        contentPane.add(txt33);
+        
+        // Paneles de Matrix 2
+        txt211 = new JTextField();
+        txt211.setHorizontalAlignment(SwingConstants.CENTER);
+        txt211.setBounds(185, 37, 45, 28);
+        contentPane.add(txt211);
+        txt211.setColumns(10);
+
+        txt221 = new JTextField();
+        txt221.setHorizontalAlignment(SwingConstants.CENTER);
+        txt221.setColumns(10);
+        txt221.setBounds(185, 75, 45, 28);
+        contentPane.add(txt221);
+
+        txt231 = new JTextField();
+        txt231.setHorizontalAlignment(SwingConstants.CENTER);
+        txt231.setColumns(10);
+        txt231.setBounds(185, 113, 45, 28);
+        contentPane.add(txt231);
+
+        txt212 = new JTextField();
+        txt212.setHorizontalAlignment(SwingConstants.CENTER);
+        txt212.setColumns(10);
+        txt212.setBounds(240, 37, 45, 28);
+        contentPane.add(txt212);
+
+        txt222 = new JTextField();
+        txt222.setHorizontalAlignment(SwingConstants.CENTER);
+        txt222.setColumns(10);
+        txt222.setBounds(240, 75, 45, 28);
+        contentPane.add(txt222);
+
+        txt232 = new JTextField();
+        txt232.setHorizontalAlignment(SwingConstants.CENTER);
+        txt232.setColumns(10);
+        txt232.setBounds(240, 113, 45, 28);
+        contentPane.add(txt232);
+
+        txt213 = new JTextField();
+        txt213.setHorizontalAlignment(SwingConstants.CENTER);
+        txt213.setColumns(10);
+        txt213.setBounds(295, 37, 45, 28);
+        contentPane.add(txt213);
+
+        txt223 = new JTextField();
+        txt223.setHorizontalAlignment(SwingConstants.CENTER);
+        txt223.setColumns(10);
+        txt223.setBounds(295, 75, 45, 28);
+        contentPane.add(txt223);
+
+        txt233 = new JTextField();
+        txt233.setHorizontalAlignment(SwingConstants.CENTER);
+        txt233.setColumns(10);
+        txt233.setBounds(295, 113, 45, 28);
+        contentPane.add(txt233);
+
+        // Paneles de Resultados 
+        txtRes11 = new JTextField();
+        txtRes11.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes11.setForeground(Color.DARK_GRAY);
+        txtRes11.setHorizontalAlignment(SwingConstants.CENTER);
+        txtRes11.setColumns(10);
+        txtRes11.setBounds(362, 37, 50, 28);
+        contentPane.add(txtRes11);
+        
+        txtRes21 = new JTextField();
+        txtRes21.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes21.setForeground(Color.DARK_GRAY);
+        txtRes21.setHorizontalAlignment(SwingConstants.CENTER);
+        txtRes21.setColumns(10);
+        txtRes21.setBounds(362, 75, 50, 28);
+        contentPane.add(txtRes21);
+        
+        txtRes31 = new JTextField();
+        txtRes31.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes31.setForeground(Color.DARK_GRAY);
+        txtRes31.setHorizontalAlignment(SwingConstants.CENTER);
+        txtRes31.setColumns(10);
+        txtRes31.setBounds(362, 113, 50, 28);
+        contentPane.add(txtRes31);
+        
+        txtRes12 = new JTextField();
+        txtRes12.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes12.setForeground(Color.DARK_GRAY);
+        txtRes12.setHorizontalAlignment(SwingConstants.CENTER);
+        txtRes12.setColumns(10);
+        txtRes12.setBounds(422, 37, 50, 28);
+        contentPane.add(txtRes12);
+        
+        txtRes22 = new JTextField();
+        txtRes22.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes22.setForeground(Color.DARK_GRAY);
+        txtRes22.setHorizontalAlignment(SwingConstants.CENTER);
+        txtRes22.setColumns(10);
+        txtRes22.setBounds(422, 75, 50, 28);
+        contentPane.add(txtRes22);
+        
+        txtRes32 = new JTextField();
+        txtRes32.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes32.setForeground(Color.DARK_GRAY);
+        txtRes32.setHorizontalAlignment(SwingConstants.CENTER);
+        txtRes32.setColumns(10);
+        txtRes32.setBounds(422, 113, 50, 28);
+        contentPane.add(txtRes32);
+        
+        txtRes13 = new JTextField();
+        txtRes13.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes13.setForeground(Color.DARK_GRAY);
+        txtRes13.setHorizontalAlignment(SwingConstants.CENTER);
+        txtRes13.setColumns(10);
+        txtRes13.setBounds(482, 37, 50, 28);
+        contentPane.add(txtRes13);
+        
+        txtRes23 = new JTextField();
+        txtRes23.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes23.setForeground(Color.DARK_GRAY);
+        txtRes23.setHorizontalAlignment(SwingConstants.CENTER);
+        txtRes23.setColumns(10);
+        txtRes23.setBounds(482, 75, 50, 28);
+        contentPane.add(txtRes23);
+        
+        txtRes33 = new JTextField();
+        txtRes33.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        txtRes33.setForeground(Color.DARK_GRAY);
+        txtRes33.setHorizontalAlignment(SwingConstants.CENTER);
+        txtRes33.setColumns(10);
+        txtRes33.setBounds(482, 113, 51, 28);
+        contentPane.add(txtRes33);
+        
+        
+        txtResEsc = new JTextField();
+        txtResEsc.setHorizontalAlignment(SwingConstants.CENTER);
+        txtResEsc.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        txtResEsc.setColumns(10);
+        txtResEsc.setBounds(423, 226, 83, 50);
+        contentPane.add(txtResEsc);
+
+        txtResDeter = new JTextField();
+        txtResDeter.setHorizontalAlignment(SwingConstants.CENTER);
+        txtResDeter.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        txtResDeter.setColumns(10);
+        txtResDeter.setBounds(423, 348, 83, 50);
+        contentPane.add(txtResDeter);
+        
+        
+        // Botones de Numeros
+        JButton btn0 = new JButton("0");
+        btn0.setForeground(Color.WHITE);
+        btn0.setFont(new Font("Arial", Font.BOLD, 18));
+        btn0.setBackground(Color.BLACK);
+        btn0.setBounds(107, 348, 45, 50);
+        contentPane.add(btn0);
+        btn0.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                txt11.setText(txt11.getText() + "0");
+                txt12.setText(txt12.getText() + "0");
+                txt13.setText(txt13.getText() + "0");
+                txt21.setText(txt11.getText() + "0");
+                txt22.setText(txt12.getText() + "0");
+                txt23.setText(txt13.getText() + "0");
+                txt31.setText(txt11.getText() + "0");
+                txt32.setText(txt12.getText() + "0");
+                txt33.setText(txt13.getText() + "0");
+                txt211.setText(txt211.getText() + "0");
+                txt212.setText(txt212.getText() + "0");
+                txt213.setText(txt213.getText() + "0");
+                txt221.setText(txt221.getText() + "0");
+                txt222.setText(txt222.getText() + "0");
+                txt223.setText(txt223.getText() + "0");
+                txt231.setText(txt231.getText() + "0");
+                txt232.setText(txt232.getText() + "0");
+                txt233.setText(txt233.getText() + "0");
+            }
+        });
+        
+        JButton btn1 = new JButton("1");
+        btn1.setForeground(Color.WHITE);
+        btn1.setFont(new Font("Arial", Font.BOLD, 18));
+        btn1.setBackground(Color.BLACK);
+        btn1.setBounds(34, 167, 45, 50);
+        contentPane.add(btn1);
+        btn1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                txt11.setText(txt11.getText() + "1");
+                txt12.setText(txt12.getText() + "1");
+                txt13.setText(txt13.getText() + "1");
+                txt21.setText(txt11.getText() + "1");
+                txt22.setText(txt12.getText() + "1");
+                txt23.setText(txt13.getText() + "1");
+                txt31.setText(txt11.getText() + "1");
+                txt32.setText(txt12.getText() + "1");
+                txt33.setText(txt13.getText() + "1");
+                txt211.setText(txt211.getText() + "1");
+                txt212.setText(txt212.getText() + "1");
+                txt213.setText(txt213.getText() + "1");
+                txt221.setText(txt221.getText() + "1");
+                txt222.setText(txt222.getText() + "1");
+                txt223.setText(txt223.getText() + "1");
+                txt231.setText(txt231.getText() + "1");
+                txt232.setText(txt232.getText() + "1");
+                txt233.setText(txt233.getText() + "1");
+            }
+        });
+
+        JButton btn2 = new JButton("2");
+        btn2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                txt11.setText(txt11.getText() + "2");
+                txt12.setText(txt12.getText() + "2");
+                txt13.setText(txt13.getText() + "2");
+                txt21.setText(txt11.getText() + "2");
+                txt22.setText(txt12.getText() + "2");
+                txt23.setText(txt13.getText() + "2");
+                txt31.setText(txt11.getText() + "2");
+                txt32.setText(txt12.getText() + "2");
+                txt33.setText(txt13.getText() + "2");
+                txt211.setText(txt211.getText() + "2");
+                txt212.setText(txt212.getText() + "2");
+                txt213.setText(txt213.getText() + "2");
+                txt221.setText(txt221.getText() + "2");
+                txt222.setText(txt222.getText() + "2");
+                txt223.setText(txt223.getText() + "2");
+                txt231.setText(txt231.getText() + "2");
+                txt232.setText(txt232.getText() + "2");
+                txt233.setText(txt233.getText() + "2");
+            }
+        });
+        btn2.setForeground(Color.WHITE);
+        btn2.setFont(new Font("Arial", Font.BOLD, 18));
+        btn2.setBackground(Color.BLACK);
+        btn2.setBounds(107, 165, 45, 50);
+        contentPane.add(btn2);
+
+        JButton btn3 = new JButton("3");
+        btn3.setForeground(Color.WHITE);
+        btn3.setFont(new Font("Arial", Font.BOLD, 18));
+        btn3.setBackground(Color.BLACK);
+        btn3.setBounds(180, 165, 45, 50);
+        contentPane.add(btn3);
+        btn3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                txt11.setText(txt11.getText() + "3");
+                txt12.setText(txt12.getText() + "3");
+                txt13.setText(txt13.getText() + "3");
+                txt21.setText(txt11.getText() + "3");
+                txt22.setText(txt12.getText() + "3");
+                txt23.setText(txt13.getText() + "3");
+                txt31.setText(txt11.getText() + "3");
+                txt32.setText(txt12.getText() + "3");
+                txt33.setText(txt13.getText() + "3");
+                txt211.setText(txt211.getText() + "3");
+                txt212.setText(txt212.getText() + "3");
+                txt213.setText(txt213.getText() + "3");
+                txt221.setText(txt221.getText() + "3");
+                txt222.setText(txt222.getText() + "3");
+                txt223.setText(txt223.getText() + "3");
+                txt231.setText(txt231.getText() + "3");
+                txt232.setText(txt232.getText() + "3");
+                txt233.setText(txt233.getText() + "3");
+            }
+        });
+
+        JButton btn4 = new JButton("4");
+        btn4.setForeground(Color.WHITE);
+        btn4.setFont(new Font("Arial", Font.BOLD, 18));
+        btn4.setBackground(Color.BLACK);
+        btn4.setBounds(34, 228, 45, 50);
+        contentPane.add(btn4);
+        btn4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                txt11.setText(txt11.getText() + "4");
+                txt12.setText(txt12.getText() + "4");
+                txt13.setText(txt13.getText() + "4");
+                txt21.setText(txt11.getText() + "4");
+                txt22.setText(txt12.getText() + "4");
+                txt23.setText(txt13.getText() + "4");
+                txt31.setText(txt11.getText() + "4");
+                txt32.setText(txt12.getText() + "4");
+                txt33.setText(txt13.getText() + "4");
+                txt211.setText(txt211.getText() + "4");
+                txt212.setText(txt212.getText() + "4");
+                txt213.setText(txt213.getText() + "4");
+                txt221.setText(txt221.getText() + "4");
+                txt222.setText(txt222.getText() + "4");
+                txt223.setText(txt223.getText() + "4");
+                txt231.setText(txt231.getText() + "4");
+                txt232.setText(txt232.getText() + "4");
+                txt233.setText(txt233.getText() + "4");
+            }
+        });
+
+        JButton btn5 = new JButton("5");
+        btn5.setForeground(Color.WHITE);
+        btn5.setFont(new Font("Arial", Font.BOLD, 18));
+        btn5.setBackground(Color.BLACK);
+        btn5.setBounds(107, 226, 45, 50);
+        contentPane.add(btn5);
+        btn5.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                txt11.setText(txt11.getText() + "5");
+                txt12.setText(txt12.getText() + "5");
+                txt13.setText(txt13.getText() + "5");
+                txt21.setText(txt11.getText() + "5");
+                txt22.setText(txt12.getText() + "5");
+                txt23.setText(txt13.getText() + "5");
+                txt31.setText(txt11.getText() + "5");
+                txt32.setText(txt12.getText() + "5");
+                txt33.setText(txt13.getText() + "5");
+                txt211.setText(txt211.getText() + "5");
+                txt212.setText(txt212.getText() + "5");
+                txt213.setText(txt213.getText() + "5");
+                txt221.setText(txt221.getText() + "5");
+                txt222.setText(txt222.getText() + "5");
+                txt223.setText(txt223.getText() + "5");
+                txt231.setText(txt231.getText() + "5");
+                txt232.setText(txt232.getText() + "5");
+                txt233.setText(txt233.getText() + "5");
+            }
+        });
+
+        JButton btn6 = new JButton("6");
+        btn6.setForeground(Color.WHITE);
+        btn6.setFont(new Font("Arial", Font.BOLD, 18));
+        btn6.setBackground(Color.BLACK);
+        btn6.setBounds(180, 226, 45, 50);
+        contentPane.add(btn6);
+        btn6.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                txt11.setText(txt11.getText() + "6");
+                txt12.setText(txt12.getText() + "6");
+                txt13.setText(txt13.getText() + "6");
+                txt21.setText(txt11.getText() + "6");
+                txt22.setText(txt12.getText() + "6");
+                txt23.setText(txt13.getText() + "6");
+                txt31.setText(txt11.getText() + "6");
+                txt32.setText(txt12.getText() + "6");
+                txt33.setText(txt13.getText() + "6");
+                txt211.setText(txt211.getText() + "6");
+                txt212.setText(txt212.getText() + "6");
+                txt213.setText(txt213.getText() + "6");
+                txt221.setText(txt221.getText() + "6");
+                txt222.setText(txt222.getText() + "6");
+                txt223.setText(txt223.getText() + "6");
+                txt231.setText(txt231.getText() + "6");
+                txt232.setText(txt232.getText() + "6");
+                txt233.setText(txt233.getText() + "6");
+            }
+        });
+        
+        JButton btn7 = new JButton("7");
+        btn7.setForeground(Color.WHITE);
+        btn7.setFont(new Font("Arial", Font.BOLD, 18));
+        btn7.setBackground(Color.BLACK);
+        btn7.setBounds(34, 289, 45, 50);
+        contentPane.add(btn7);
+        btn7.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                txt11.setText(txt11.getText() + "7");
+                txt12.setText(txt12.getText() + "7");
+                txt13.setText(txt13.getText() + "7");
+                txt21.setText(txt11.getText() + "7");
+                txt22.setText(txt12.getText() + "7");
+                txt23.setText(txt13.getText() + "7");
+                txt31.setText(txt11.getText() + "7");
+                txt32.setText(txt12.getText() + "7");
+                txt33.setText(txt13.getText() + "7");
+                txt211.setText(txt211.getText() + "7");
+                txt212.setText(txt212.getText() + "7");
+                txt213.setText(txt213.getText() + "7");
+                txt221.setText(txt221.getText() + "7");
+                txt222.setText(txt222.getText() + "7");
+                txt223.setText(txt223.getText() + "7");
+                txt231.setText(txt231.getText() + "7");
+                txt232.setText(txt232.getText() + "7");
+                txt233.setText(txt233.getText() + "7");
+            }
+        });
+
+        JButton btn8 = new JButton("8");
+        btn8.setForeground(Color.WHITE);
+        btn8.setFont(new Font("Arial", Font.BOLD, 18));
+        btn8.setBackground(Color.BLACK);
+        btn8.setBounds(107, 287, 45, 50);
+        contentPane.add(btn8);
+        btn8.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                txt11.setText(txt11.getText() + "8");
+                txt12.setText(txt12.getText() + "8");
+                txt13.setText(txt13.getText() + "8");
+                txt21.setText(txt11.getText() + "8");
+                txt22.setText(txt12.getText() + "8");
+                txt23.setText(txt13.getText() + "8");
+                txt31.setText(txt11.getText() + "8");
+                txt32.setText(txt12.getText() + "8");
+                txt33.setText(txt13.getText() + "8");
+                txt211.setText(txt211.getText() + "8");
+                txt212.setText(txt212.getText() + "8");
+                txt213.setText(txt213.getText() + "8");
+                txt221.setText(txt221.getText() + "8");
+                txt222.setText(txt222.getText() + "8");
+                txt223.setText(txt223.getText() + "8");
+                txt231.setText(txt231.getText() + "8");
+                txt232.setText(txt232.getText() + "8");
+                txt233.setText(txt233.getText() + "8");
+            }
+        });
+
+        JButton btn9 = new JButton("9");
+        btn9.setForeground(Color.WHITE);
+        btn9.setFont(new Font("Arial", Font.BOLD, 18));
+        btn9.setBackground(Color.BLACK);
+        btn9.setBounds(180, 287, 45, 50);
+        contentPane.add(btn9);
+        btn9.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                txt11.setText(txt11.getText() + "9");
+                txt12.setText(txt12.getText() + "9");
+                txt13.setText(txt13.getText() + "9");
+                txt21.setText(txt11.getText() + "9");
+                txt22.setText(txt12.getText() + "9");
+                txt23.setText(txt13.getText() + "9");
+                txt31.setText(txt11.getText() + "9");
+                txt32.setText(txt12.getText() + "9");
+                txt33.setText(txt13.getText() + "9");
+                txt211.setText(txt211.getText() + "9");
+                txt212.setText(txt212.getText() + "9");
+                txt213.setText(txt213.getText() + "9");
+                txt221.setText(txt221.getText() + "9");
+                txt222.setText(txt222.getText() + "9");
+                txt223.setText(txt223.getText() + "9");
+                txt231.setText(txt231.getText() + "9");
+                txt232.setText(txt232.getText() + "9");
+                txt233.setText(txt233.getText() + "9");
+            }
+        });
+        
+        // Botones Escalar & Inversa & Determinante
+        JButton btnEsc = new JButton("Escal");
+        btnEsc.setForeground(Color.BLUE);
+        btnEsc.setFont(new Font("Arial", Font.BOLD, 17));
+        btnEsc.setBackground(Color.BLACK);
+        btnEsc.setBounds(324, 226, 98, 50);
+        contentPane.add(btnEsc);
+        btnEsc.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                float escalar = Float.parseFloat(txtResEsc.getText());
+                float[][] matriz = new float[3][3];
+                matriz[0][0] = Float.parseFloat(txt11.getText());
+                matriz[0][1] = Float.parseFloat(txt12.getText());
+                matriz[0][2] = Float.parseFloat(txt13.getText());
+                matriz[1][0] = Float.parseFloat(txt21.getText());
+                matriz[1][1] = Float.parseFloat(txt22.getText());
+                matriz[1][2] = Float.parseFloat(txt23.getText());
+                matriz[2][0] = Float.parseFloat(txt31.getText());
+                matriz[2][1] = Float.parseFloat(txt32.getText());
+                matriz[2][2] = Float.parseFloat(txt33.getText());
+                float[][] resultado = new float[3][3];
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        resultado[i][j] = matriz[i][j] * escalar;
+                    }
+                }
+                txtRes11.setText(String.valueOf(resultado[0][0]));
+                txtRes12.setText(String.valueOf(resultado[0][1]));
+                txtRes13.setText(String.valueOf(resultado[0][2]));
+                txtRes21.setText(String.valueOf(resultado[1][0]));
+                txtRes22.setText(String.valueOf(resultado[1][1]));
+                txtRes23.setText(String.valueOf(resultado[1][2]));
+                txtRes31.setText(String.valueOf(resultado[2][0]));
+                txtRes32.setText(String.valueOf(resultado[2][1]));
+                txtRes33.setText(String.valueOf(resultado[2][2]));
+            }
+        });
+
+        JButton btnInvers = new JButton("Inversa");
+        btnInvers.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                float[][] matriz1 = new float[3][3];
+                matriz1[0][0] = Float.parseFloat(txt11.getText());
+                matriz1[0][1] = Float.parseFloat(txt12.getText());
+                matriz1[0][2] = Float.parseFloat(txt13.getText());
+                matriz1[1][0] = Float.parseFloat(txt21.getText());
+                matriz1[1][1] = Float.parseFloat(txt22.getText());
+                matriz1[1][2] = Float.parseFloat(txt23.getText());
+                matriz1[2][0] = Float.parseFloat(txt31.getText());
+                matriz1[2][1] = Float.parseFloat(txt32.getText());
+                matriz1[2][2] = Float.parseFloat(txt33.getText());
+
+                float determinante;
+                determinante = (matriz1[0][0]*matriz1[1][1]*matriz1[2][2])+(matriz1[1][0]*matriz1[2][1]*matriz1[0][2])+(matriz1[2][0]*matriz1[0][1] * matriz1[1][2]);
+                determinante = determinante-(matriz1[0][2]*matriz1[1][1]*matriz1[2][0])-(matriz1[1][2]*matriz1[2][1]*matriz1[0][0])-(matriz1[2][2]*matriz1[0][1]*matriz1[1][0]);
+                txtResDeter.setText(String.valueOf(determinante));
+                
+                if (determinante == 0) {
+                	
+                } else {
+                    float[][] adjunta = new float[3][3];
+                    adjunta[0][0] = matriz1[1][1] * matriz1[2][2] - matriz1[1][2] * matriz1[2][1];
+                    adjunta[0][1] = matriz1[0][2] * matriz1[2][1] - matriz1[0][1] * matriz1[2][2];
+                    adjunta[0][2] = matriz1[0][1] * matriz1[1][2] - matriz1[0][2] * matriz1[1][1];
+                    adjunta[1][0] = matriz1[1][2] * matriz1[2][0] - matriz1[1][0] * matriz1[2][2];
+                    adjunta[1][1] = matriz1[0][0] * matriz1[2][2] - matriz1[0][2] * matriz1[2][0];
+                    adjunta[1][2] = matriz1[0][2] * matriz1[1][0] - matriz1[0][0] * matriz1[1][2];
+                    adjunta[2][0] = matriz1[1][0] * matriz1[2][1] - matriz1[1][1] * matriz1[2][0];
+                    adjunta[2][1] = matriz1[0][1] * matriz1[2][0] - matriz1[0][0] * matriz1[2][1];
+                    adjunta[2][2] = matriz1[0][0] * matriz1[1][1] - matriz1[0][1] * matriz1[1][0];
+
+                    float[][] resultado = new float[3][3];
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
+                            resultado[i][j] = adjunta[i][j] / determinante;
+                        }
+                    } 
+                txtRes11.setText(String.valueOf(resultado[0][0]));
+                txtRes12.setText(String.valueOf(resultado[0][1]));
+                txtRes13.setText(String.valueOf(resultado[0][2]));
+                txtRes21.setText(String.valueOf(resultado[1][0]));
+                txtRes22.setText(String.valueOf(resultado[1][1]));
+                txtRes23.setText(String.valueOf(resultado[1][2]));
+                txtRes31.setText(String.valueOf(resultado[2][0]));
+                txtRes32.setText(String.valueOf(resultado[2][1]));
+                txtRes33.setText(String.valueOf(resultado[2][2]));  
+                }
+                
+            }
+        });
+        btnInvers.setForeground(Color.BLUE);
+        btnInvers.setFont(new Font("Arial", Font.BOLD, 17));
+        btnInvers.setBackground(Color.BLACK);
+        btnInvers.setBounds(324, 287, 98, 50);
+        contentPane.add(btnInvers);
+    
+        JButton btnDeterm = new JButton("Deter");
+        btnDeterm.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                float[][] matriz1 = new float[3][3];
+                matriz1[0][0] = Float.parseFloat(txt11.getText());
+                matriz1[0][1] = Float.parseFloat(txt12.getText());
+                matriz1[0][2] = Float.parseFloat(txt13.getText());
+                matriz1[1][0] = Float.parseFloat(txt21.getText());
+                matriz1[1][1] = Float.parseFloat(txt22.getText());
+                matriz1[1][2] = Float.parseFloat(txt23.getText());
+                matriz1[2][0] = Float.parseFloat(txt31.getText());
+                matriz1[2][1] = Float.parseFloat(txt32.getText());
+                matriz1[2][2] = Float.parseFloat(txt33.getText());
+
+                float determinante;
+                determinante = (matriz1[0][0]*matriz1[1][1]*matriz1[2][2])+(matriz1[1][0]*matriz1[2][1]*matriz1[0][2])+(matriz1[2][0]*matriz1[0][1] * matriz1[1][2]);
+                determinante = determinante-(matriz1[0][2]*matriz1[1][1]*matriz1[2][0])-(matriz1[1][2]*matriz1[2][1]*matriz1[0][0])-(matriz1[2][2]*matriz1[0][1]*matriz1[1][0]);
+                txtResDeter.setText(String.valueOf(determinante));
+} 
+        });
+        btnDeterm.setForeground(Color.BLUE);
+        btnDeterm.setFont(new Font("Arial", Font.BOLD, 18));
+        btnDeterm.setBackground(Color.BLACK);
+        btnDeterm.setBounds(324, 348, 98, 50);
+        contentPane.add(btnDeterm);
+    
+        
+        // Botones "." & "↓" & "C"
+		JButton btncoma = new JButton(",");
+		btncoma.setForeground(Color.RED);
+		btncoma.setFont(new Font("Arial", Font.BOLD, 18));
+		btncoma.setBackground(Color.BLACK);
+		btncoma.setBounds(34, 348, 45, 50);
+		contentPane.add(btncoma);
+    		btncoma.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String ingresenumero11 = txt11.getText() + btncoma.getText();
+				String ingresenumero12 = txt12.getText() + btncoma.getText();
+				String ingresenumero13 = txt13.getText() + btncoma.getText();
+				String ingresenumero21 = txt21.getText() + btncoma.getText();
+				String ingresenumero22 = txt22.getText() + btncoma.getText();
+				String ingresenumero23 = txt23.getText() + btncoma.getText();
+				String ingresenumero31 = txt31.getText() + btncoma.getText();
+				String ingresenumero32 = txt32.getText() + btncoma.getText();
+				String ingresenumero33 = txt33.getText() + btncoma.getText();
+				String ingresenumero211 = txt211.getText() + btncoma.getText();
+				String ingresenumero212 = txt212.getText() + btncoma.getText();
+				String ingresenumero213 = txt213.getText() + btncoma.getText();
+				String ingresenumero221 = txt221.getText() + btncoma.getText();
+				String ingresenumero222 = txt222.getText() + btncoma.getText();
+				String ingresenumero223 = txt223.getText() + btncoma.getText();
+				String ingresenumero231 = txt231.getText() + btncoma.getText();
+				String ingresenumero232 = txt232.getText() + btncoma.getText();
+				String ingresenumero233 = txt233.getText() + btncoma.getText();
+				txt11.setText(ingresenumero11);
+				txt12.setText(ingresenumero12);
+				txt13.setText(ingresenumero13);
+				txt21.setText(ingresenumero21);
+				txt22.setText(ingresenumero22);
+				txt23.setText(ingresenumero23);
+				txt31.setText(ingresenumero31);
+				txt32.setText(ingresenumero32);
+				txt33.setText(ingresenumero33);
+				txt211.setText(ingresenumero211);
+				txt212.setText(ingresenumero212);
+				txt213.setText(ingresenumero213);
+				txt221.setText(ingresenumero221);
+				txt222.setText(ingresenumero222);
+				txt223.setText(ingresenumero223);
+				txt231.setText(ingresenumero231);
+				txt232.setText(ingresenumero232);
+				txt233.setText(ingresenumero233);
+			}
+		});
+    		
+		JButton btnNewButton = new JButton("↓");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btnNewButton.setForeground(Color.BLUE);
+		btnNewButton.setBackground(Color.BLACK);
+		btnNewButton.setBounds(10, 409, 522, 46);
+		contentPane.add(btnNewButton);
+                btnNewButton.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e) {
+                           Menu M1 = new Menu();
+                           M1.setVisible(true);
+	            }
+		});
+        
+        JButton btnlimpiar = new JButton("C");
+        btnlimpiar.setForeground(Color.RED);
+        btnlimpiar.setFont(new Font("Arial", Font.BOLD, 18));
+        btnlimpiar.setBackground(Color.BLACK);
+        btnlimpiar.setBounds(324, 165, 144, 50);
+        contentPane.add(btnlimpiar);
+		btnlimpiar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				txt11.setText("");
+				txt12.setText("");
+				txt13.setText("");
+				txt21.setText("");
+				txt22.setText("");
+				txt23.setText("");
+				txt31.setText("");
+				txt32.setText("");
+				txt33.setText("");
+				txt211.setText("");
+				txt212.setText("");
+				txt213.setText("");
+				txt221.setText("");
+				txt222.setText("");
+				txt223.setText("");
+				txt231.setText("");
+				txt232.setText("");
+				txt233.setText("");
+				txtRes11.setText("");
+				txtRes12.setText("");
+				txtRes13.setText("");
+				txtRes21.setText("");
+				txtRes22.setText("");
+				txtRes23.setText("");
+				txtRes31.setText("");
+				txtRes32.setText("");
+				txtRes33.setText("");
+				txtResEsc.setText("");
+				txtResDeter.setText("");
+			}
+		});
+    
+		
+		// Botones de Operaciones
+        JButton btnsuma = new JButton("+");
+        btnsuma.setForeground(Color.ORANGE);
+        btnsuma.setFont(new Font("Arial", Font.BOLD, 18));
+        btnsuma.setBackground(Color.BLACK);
+        btnsuma.setBounds(251, 165, 45, 50);
+        contentPane.add(btnsuma);
+        btnsuma.addActionListener(new ActionListener() {   
+        public void actionPerformed(ActionEvent e) {
+            float[][] resultado = new float[3][3];
+        	float[][] matriz1 = new float[3][3];
+            matriz1[0][0] = Float.parseFloat(txt11.getText());
+            matriz1[0][1] = Float.parseFloat(txt12.getText());
+            matriz1[0][2] = Float.parseFloat(txt13.getText());
+            matriz1[1][0] = Float.parseFloat(txt21.getText());
+            matriz1[1][1] = Float.parseFloat(txt22.getText());
+            matriz1[1][2] = Float.parseFloat(txt23.getText());
+            matriz1[2][0] = Float.parseFloat(txt31.getText());
+            matriz1[2][1] = Float.parseFloat(txt32.getText());
+            matriz1[2][2] = Float.parseFloat(txt33.getText());
+            float[][] matriz2 = new float[3][3];
+            matriz2[0][0] = Float.parseFloat(txt211.getText());
+            matriz2[0][1] = Float.parseFloat(txt212.getText());
+            matriz2[0][2] = Float.parseFloat(txt213.getText());
+            matriz2[1][0] = Float.parseFloat(txt221.getText());
+            matriz2[1][1] = Float.parseFloat(txt222.getText());
+            matriz2[1][2] = Float.parseFloat(txt223.getText());
+            matriz2[2][0] = Float.parseFloat(txt231.getText());
+            matriz2[2][1] = Float.parseFloat(txt232.getText());
+            matriz2[2][2] = Float.parseFloat(txt233.getText());
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    resultado[i][j] = matriz1[i][j] + matriz2[i][j];
+                }
+            }
+            txtRes11.setText(String.valueOf(resultado[0][0]));
+            txtRes12.setText(String.valueOf(resultado[0][1]));
+            txtRes13.setText(String.valueOf(resultado[0][2]));
+            txtRes21.setText(String.valueOf(resultado[1][0]));
+            txtRes22.setText(String.valueOf(resultado[1][1]));
+            txtRes23.setText(String.valueOf(resultado[1][2]));
+            txtRes31.setText(String.valueOf(resultado[2][0]));
+            txtRes32.setText(String.valueOf(resultado[2][1]));
+            txtRes33.setText(String.valueOf(resultado[2][2]));
+         }
+        });
+		
+
+        JButton btnresta = new JButton("-");
+        btnresta.setForeground(Color.ORANGE);
+        btnresta.setFont(new Font("Arial", Font.BOLD, 18));
+        btnresta.setBackground(Color.BLACK);
+        btnresta.setBounds(251, 226, 45, 50);
+        contentPane.add(btnresta);
+        btnresta.addActionListener(new ActionListener() {   
+        public void actionPerformed(ActionEvent e) {
+            float[][] resultado = new float[3][3];
+        	float[][] matriz1 = new float[3][3];
+            matriz1[0][0] = Float.parseFloat(txt11.getText());
+            matriz1[0][1] = Float.parseFloat(txt12.getText());
+            matriz1[0][2] = Float.parseFloat(txt13.getText());
+            matriz1[1][0] = Float.parseFloat(txt21.getText());
+            matriz1[1][1] = Float.parseFloat(txt22.getText());
+            matriz1[1][2] = Float.parseFloat(txt23.getText());
+            matriz1[2][0] = Float.parseFloat(txt31.getText());
+            matriz1[2][1] = Float.parseFloat(txt32.getText());
+            matriz1[2][2] = Float.parseFloat(txt33.getText());
+            float[][] matriz2 = new float[3][3];
+            matriz2[0][0] = Float.parseFloat(txt211.getText());
+            matriz2[0][1] = Float.parseFloat(txt212.getText());
+            matriz2[0][2] = Float.parseFloat(txt213.getText());
+            matriz2[1][0] = Float.parseFloat(txt221.getText());
+            matriz2[1][1] = Float.parseFloat(txt222.getText());
+            matriz2[1][2] = Float.parseFloat(txt223.getText());
+            matriz2[2][0] = Float.parseFloat(txt231.getText());
+            matriz2[2][1] = Float.parseFloat(txt232.getText());
+            matriz2[2][2] = Float.parseFloat(txt233.getText());
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    resultado[i][j] = matriz1[i][j] - matriz2[i][j];
+                }
+            }
+            txtRes11.setText(String.valueOf(resultado[0][0]));
+            txtRes12.setText(String.valueOf(resultado[0][1]));
+            txtRes13.setText(String.valueOf(resultado[0][2]));
+            txtRes21.setText(String.valueOf(resultado[1][0]));
+            txtRes22.setText(String.valueOf(resultado[1][1]));
+            txtRes23.setText(String.valueOf(resultado[1][2]));
+            txtRes31.setText(String.valueOf(resultado[2][0]));
+            txtRes32.setText(String.valueOf(resultado[2][1]));
+            txtRes33.setText(String.valueOf(resultado[2][2]));
+         }
+        });
+
+        JButton btnpor = new JButton("x");
+        btnpor.setForeground(Color.ORANGE);
+        btnpor.setFont(new Font("Arial", Font.BOLD, 18));
+        btnpor.setBackground(Color.BLACK);
+        btnpor.setBounds(251, 287, 45, 50);
+        contentPane.add(btnpor);
+        btnpor.addActionListener(new ActionListener() {    
+        public void actionPerformed(ActionEvent e) {
+        	float[][] resultado = new float[3][3];
+        	float[][] matriz1 = new float[3][3];
+            matriz1[0][0] = Float.parseFloat(txt11.getText());
+            matriz1[0][1] = Float.parseFloat(txt12.getText());
+            matriz1[0][2] = Float.parseFloat(txt13.getText());
+            matriz1[1][0] = Float.parseFloat(txt21.getText());
+            matriz1[1][1] = Float.parseFloat(txt22.getText());
+            matriz1[1][2] = Float.parseFloat(txt23.getText());
+            matriz1[2][0] = Float.parseFloat(txt31.getText());
+            matriz1[2][1] = Float.parseFloat(txt32.getText());
+            matriz1[2][2] = Float.parseFloat(txt33.getText());
+            float[][] matriz2 = new float[3][3];
+            matriz2[0][0] = Float.parseFloat(txt211.getText());
+            matriz2[0][1] = Float.parseFloat(txt212.getText());
+            matriz2[0][2] = Float.parseFloat(txt213.getText());
+            matriz2[1][0] = Float.parseFloat(txt221.getText());
+            matriz2[1][1] = Float.parseFloat(txt222.getText());
+            matriz2[1][2] = Float.parseFloat(txt223.getText());
+            matriz2[2][0] = Float.parseFloat(txt231.getText());
+            matriz2[2][1] = Float.parseFloat(txt232.getText());
+            matriz2[2][2] = Float.parseFloat(txt233.getText());
+            resultado[0][0] = (matriz1[0][0] * matriz2[0][0]) + (matriz1[0][1] * matriz2[1][0]) + (matriz1[0][2] * matriz2[2][0]);
+            resultado[0][1] = (matriz1[0][0] * matriz2[0][1]) + (matriz1[0][1] * matriz2[1][1]) + (matriz1[0][2] * matriz2[2][1]);
+            resultado[0][2] = (matriz1[0][0] * matriz2[0][2]) + (matriz1[0][1] * matriz2[1][2]) + (matriz1[0][2] * matriz2[2][2]);
+            resultado[1][0] = (matriz1[1][0] * matriz2[0][0]) + (matriz1[1][1] * matriz2[1][0]) + (matriz1[1][2] * matriz2[2][0]);
+            resultado[1][1] = (matriz1[1][0] * matriz2[0][1]) + (matriz1[1][1] * matriz2[1][1]) + (matriz1[1][2] * matriz2[2][1]);
+            resultado[1][2] = (matriz1[1][0] * matriz2[0][2]) + (matriz1[1][1] * matriz2[1][2]) + (matriz1[1][2] * matriz2[2][2]);
+            resultado[2][0] = (matriz1[2][0] * matriz2[0][0]) + (matriz1[2][1] * matriz2[1][0]) + (matriz1[2][2] * matriz2[2][0]);
+            resultado[2][1] = (matriz1[2][0] * matriz2[0][1]) + (matriz1[2][1] * matriz2[1][1]) + (matriz1[2][2] * matriz2[2][1]);
+            resultado[2][2] = (matriz1[2][0] * matriz2[0][2]) + (matriz1[2][1] * matriz2[1][2]) + (matriz1[2][2] * matriz2[2][2]);
+            txtRes11.setText(String.valueOf(resultado[0][0]));
+            txtRes12.setText(String.valueOf(resultado[0][1]));
+            txtRes13.setText(String.valueOf(resultado[0][2]));
+            txtRes21.setText(String.valueOf(resultado[1][0]));
+            txtRes22.setText(String.valueOf(resultado[1][1]));
+            txtRes23.setText(String.valueOf(resultado[1][2]));
+            txtRes31.setText(String.valueOf(resultado[2][0]));
+            txtRes32.setText(String.valueOf(resultado[2][1]));
+            txtRes33.setText(String.valueOf(resultado[2][2]));
+        }
+        });
+        
+        JButton btndivision = new JButton("/");
+        btndivision.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+            	float[][] matriz1 = new float[3][3];
+                matriz1[0][0] = Float.parseFloat(txt11.getText());
+                matriz1[0][1] = Float.parseFloat(txt12.getText());
+                matriz1[0][2] = Float.parseFloat(txt13.getText());
+                matriz1[1][0] = Float.parseFloat(txt21.getText());
+                matriz1[1][1] = Float.parseFloat(txt22.getText());
+                matriz1[1][2] = Float.parseFloat(txt23.getText());
+                matriz1[2][0] = Float.parseFloat(txt31.getText());
+                matriz1[2][1] = Float.parseFloat(txt32.getText());
+                matriz1[2][2] = Float.parseFloat(txt33.getText());
+                float[][] matriz2 = new float[3][3];
+                matriz2[0][0] = Float.parseFloat(txt211.getText());
+                matriz2[0][1] = Float.parseFloat(txt212.getText());
+                matriz2[0][2] = Float.parseFloat(txt213.getText());
+                matriz2[1][0] = Float.parseFloat(txt221.getText());
+                matriz2[1][1] = Float.parseFloat(txt222.getText());
+                matriz2[1][2] = Float.parseFloat(txt223.getText());
+                matriz2[2][0] = Float.parseFloat(txt231.getText());
+                matriz2[2][1] = Float.parseFloat(txt232.getText());
+                matriz2[2][2] = Float.parseFloat(txt233.getText());
+                float determinante;
+                determinante = (matriz2[0][0]*matriz2[1][1]*matriz2[2][2])+(matriz2[1][0]*matriz2[2][1]*matriz2[0][2])+(matriz2[2][0]*matriz2[0][1] * matriz2[1][2]);
+                determinante = determinante-(matriz2[0][2]*matriz2[1][1]*matriz2[2][0])-(matriz2[1][2]*matriz2[2][1]*matriz2[0][0])-(matriz2[2][2]*matriz2[0][1]*matriz2[1][0]);
+                txtResDeter.setText(String.valueOf(determinante));
+                
+                if (determinante == 0) {
+                	
+                } else {
+                	// Girar Mattrix 2
+                    float[][] matriz2g = new float[3][3];
+                    matriz2g[0][0] = matriz2[0][0];
+                    matriz2g[1][0] = matriz2[0][1];
+                    matriz2g[2][0] = matriz2[0][2];
+                    matriz2g[0][1] = matriz2[1][0];
+                    matriz2g[1][1] = matriz2[1][1];
+                    matriz2g[2][1] = matriz2[1][2];
+                    matriz2g[0][2] = matriz2[2][0];
+                    matriz2g[1][2] = matriz2[2][1];
+                    matriz2g[2][2] = matriz2[2][2];
+                    // Resultado de la Inversa
+                    float[][] adjunta = new float[3][3];
+                    adjunta[0][0] = matriz2g[1][1] * matriz2g[2][2] - matriz2g[1][2] * matriz2g[2][1];
+                    adjunta[0][1] = matriz2g[0][2] * matriz2g[2][1] - matriz2g[0][1] * matriz2g[2][2];
+                    adjunta[0][2] = matriz2g[0][1] * matriz2g[1][2] - matriz2g[0][2] * matriz2g[1][1];
+                    adjunta[1][0] = matriz2g[1][2] * matriz2g[2][0] - matriz2g[1][0] * matriz2g[2][2];
+                    adjunta[1][1] = matriz2g[0][0] * matriz2g[2][2] - matriz2g[0][2] * matriz2g[2][0];
+                    adjunta[1][2] = matriz2g[0][2] * matriz2g[1][0] - matriz2g[0][0] * matriz2g[1][2];
+                    adjunta[2][0] = matriz2g[1][0] * matriz2g[2][1] - matriz2g[1][1] * matriz2g[2][0];
+                    adjunta[2][1] = matriz2g[0][1] * matriz2g[2][0] - matriz2g[0][0] * matriz2g[2][1];
+                    adjunta[2][2] = matriz2g[0][0] * matriz2g[1][1] - matriz2g[0][1] * matriz2g[1][0];
+                    float[][] matrizinv = new float[3][3];
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
+                        	matrizinv[i][j] = adjunta[i][j] / determinante;
+                        }
+                    }
+                    float[][] resultado = new float[3][3];
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
+               		 resultado[i][j] = matriz1[i][j] * matrizinv[i][j];    
+               		 }
+                  }
+                txtRes11.setText(String.valueOf(resultado[0][0]));
+                txtRes12.setText(String.valueOf(resultado[0][1]));
+                txtRes13.setText(String.valueOf(resultado[0][2]));
+                txtRes21.setText(String.valueOf(resultado[1][0]));
+                txtRes22.setText(String.valueOf(resultado[1][1]));
+                txtRes23.setText(String.valueOf(resultado[1][2]));
+                txtRes31.setText(String.valueOf(resultado[2][0]));
+                txtRes32.setText(String.valueOf(resultado[2][1]));
+                txtRes33.setText(String.valueOf(resultado[2][2]));  
+                }    
+        	}
+        });
+        btndivision.setForeground(Color.ORANGE);
+        btndivision.setFont(new Font("Arial", Font.BOLD, 18));
+        btndivision.setBackground(Color.BLACK);
+        btndivision.setBounds(251, 348, 45, 50);
+        contentPane.add(btndivision);
+        
+        
+        // Etiquetas
+        JLabel lblNewLabel = new JLabel("Matriz 1");
+        lblNewLabel.setForeground(Color.BLACK);
+        lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        lblNewLabel.setFont(new Font("Sylfaen", Font.BOLD | Font.ITALIC, 23));
+        lblNewLabel.setBounds(10, 11, 156, 28);
+        contentPane.add(lblNewLabel);
+        
+        JLabel lblMatriz = new JLabel("Matriz 2");
+        lblMatriz.setForeground(Color.BLACK);
+        lblMatriz.setHorizontalAlignment(SwingConstants.CENTER);
+        lblMatriz.setFont(new Font("Sylfaen", Font.BOLD | Font.ITALIC, 23));
+        lblMatriz.setBounds(184, 11, 156, 28);
+        contentPane.add(lblMatriz);
+        
+        JLabel lblResultado = new JLabel("Resultado");
+        lblResultado.setForeground(Color.BLACK);
+        lblResultado.setHorizontalAlignment(SwingConstants.CENTER);
+        lblResultado.setFont(new Font("Sylfaen", Font.BOLD | Font.ITALIC, 23));
+        lblResultado.setBounds(361, 11, 156, 28);
+        contentPane.add(lblResultado);
+    }
+}
