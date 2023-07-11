@@ -1,0 +1,424 @@
+package Grafico;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
+
+public class vectoresr2 extends JFrame {
+	
+
+
+	private JPanel panel1;
+	private final JLabel lblNewLabel = new JLabel("VECTOR 1");
+	private JTextField VR1;
+	private JTextField VR2;
+	private JTextField VR3;
+	private JTextField VR4;
+	private JTextField VR5;
+	private JTextField VR6;
+	private JTextField rt1;
+	private JTextField rt2;
+	private JTextField rt3;
+	private JTextField rt4;
+	private JTextField rt5;
+	private JTextField rt6;
+	private JTextField rt7;
+	private JTextField VRR1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					vectoresr2 frame = new vectoresr2();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public vectoresr2() {
+		setFont(new Font("Arial", Font.PLAIN, 15));
+		setForeground(new Color(255, 255, 255));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 580, 520);
+		panel1 = new JPanel();
+		panel1.setBackground(new Color(27, 27, 27));
+		panel1.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(panel1);
+		panel1.setLayout(null);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setForeground(new Color(221, 221, 221));
+		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		lblNewLabel.setBounds(10, 11, 217, 31);
+		panel1.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("(");
+		lblNewLabel_1.setFont(new Font("Arial Black", Font.PLAIN, 25));
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1.setBackground(new Color(255, 255, 255));
+		lblNewLabel_1.setBounds(10, 42, 22, 31);
+		panel1.add(lblNewLabel_1);
+		
+		VR1 = new JTextField();
+		VR1.setBounds(29, 53, 38, 20);
+		panel1.add(VR1);
+		VR1.setColumns(10);
+		
+		JLabel lblNewLabel_1_1 = new JLabel(";");
+		lblNewLabel_1_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1_1.setFont(new Font("Arial Black", Font.PLAIN, 25));
+		lblNewLabel_1_1.setBounds(77, 43, 22, 29);
+		panel1.add(lblNewLabel_1_1);
+		
+		JLabel lblNewLabel_1_2 = new JLabel(")");
+		lblNewLabel_1_2.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1_2.setFont(new Font("Arial Black", Font.BOLD, 25));
+		lblNewLabel_1_2.setBounds(220, 43, 28, 29);
+		panel1.add(lblNewLabel_1_2);
+		
+		JLabel lblNewLabel_1_1_1 = new JLabel(";");
+		lblNewLabel_1_1_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1_1_1.setFont(new Font("Arial Black", Font.PLAIN, 25));
+		lblNewLabel_1_1_1.setBounds(149, 43, 28, 29);
+		panel1.add(lblNewLabel_1_1_1);
+		
+		VR2 = new JTextField();
+		VR2.setBounds(101, 53, 38, 20);
+		panel1.add(VR2);
+		VR2.setColumns(10);
+		
+		VR3 = new JTextField();
+		VR3.setColumns(10);
+		VR3.setBounds(171, 53, 38, 20);
+		panel1.add(VR3);
+		
+		JLabel lblNewLabel_1_3 = new JLabel("(");
+		lblNewLabel_1_3.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1_3.setFont(new Font("Arial Black", Font.PLAIN, 25));
+		lblNewLabel_1_3.setBounds(10, 157, 22, 31);
+		panel1.add(lblNewLabel_1_3);
+		
+		JLabel lblNewLabel_1_2_1 = new JLabel(")");
+		lblNewLabel_1_2_1.setFont(new Font("Arial Black", Font.PLAIN, 25));
+		lblNewLabel_1_2_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1_2_1.setBounds(220, 157, 28, 31);
+		panel1.add(lblNewLabel_1_2_1);
+		
+		VR4 = new JTextField();
+		VR4.setColumns(10);
+		VR4.setBounds(28, 168, 38, 20);
+		panel1.add(VR4);
+		
+		VR5 = new JTextField();
+		VR5.setColumns(10);
+		VR5.setBounds(101, 168, 38, 20);
+		panel1.add(VR5);
+		
+		VR6 = new JTextField();
+		VR6.setColumns(10);
+		VR6.setBounds(171, 168, 38, 20);
+		panel1.add(VR6);
+		
+		JLabel lblNewLabel_1_1_1_1 = new JLabel(";");
+		lblNewLabel_1_1_1_1.setFont(new Font("Arial Black", Font.PLAIN, 24));
+		lblNewLabel_1_1_1_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1_1_1_1.setBounds(76, 154, 22, 36);
+		panel1.add(lblNewLabel_1_1_1_1);
+		
+		JLabel lblNewLabel_1_1_1_2 = new JLabel(";");
+		lblNewLabel_1_1_1_2.setFont(new Font("Arial Black", Font.PLAIN, 25));
+		lblNewLabel_1_1_1_2.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1_1_1_2.setBounds(149, 154, 12, 36);
+		panel1.add(lblNewLabel_1_1_1_2);
+		
+		JButton btnNewButton_10 = new JButton("C");
+		btnNewButton_10.setForeground(Color.RED);
+		btnNewButton_10.setFont(new Font("Arial Black", Font.BOLD, 18));
+		btnNewButton_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VR1.setText("");
+				VR2.setText("");
+				VR3.setText("");
+				VR4.setText("");
+				VR5.setText("");
+				VR6.setText("");
+				rt1.setText("");
+				rt2.setText("");
+				rt3.setText("");
+				rt4.setText("");
+				rt5.setText("");
+				rt6.setText("");
+				rt7.setText("");
+				VRR1.setText("");
+
+			}
+		});
+		btnNewButton_10.setBounds(480, 216, 74, 48);
+		panel1.add(btnNewButton_10);
+		
+		JButton botonsuma = new JButton("+");
+		botonsuma.setBorderPainted(false);
+		botonsuma.setFocusable(false);
+		botonsuma.setFocusTraversalKeysEnabled(false);
+		botonsuma.setFocusPainted(false);
+		botonsuma.setHideActionText(true);
+		botonsuma.setBackground(Color.LIGHT_GRAY);
+		botonsuma.setForeground(new Color(218, 7, 7));
+		botonsuma.setFont(new Font("Tahoma", Font.PLAIN, 45));
+		botonsuma.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double num1 = Double.valueOf(VR1.getText());
+				double num2 = Double.valueOf(VR2.getText());
+				double num3 = Double.valueOf(VR3.getText());
+				double num4 = Double.valueOf(VR4.getText());
+				double num5 = Double.valueOf(VR5.getText());
+				double num6 = Double.valueOf(VR6.getText());
+				
+				double rta1 = num1 + num4;
+				double rta2 = num2 + num5;
+				double rta3 = num3 + num6;
+				rt1.setText(String.valueOf(rta1));
+				rt2.setText(String.valueOf(rta2));
+				rt3.setText(String.valueOf(rta3));
+			}
+		});
+		botonsuma.setBounds(29, 216, 74, 48);
+		panel1.add(botonsuma);
+		
+		JButton botonresta = new JButton("-");
+		botonresta.setFocusable(false);
+		botonresta.setFocusTraversalKeysEnabled(false);
+		botonresta.setFocusPainted(false);
+		botonresta.setHideActionText(true);
+		botonresta.setForeground(new Color(218, 7, 7));
+		botonresta.setFont(new Font("Tahoma", Font.PLAIN, 45));
+		botonresta.setBackground(Color.LIGHT_GRAY);
+		botonresta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double num1 = Double.valueOf(VR1.getText());
+				double num2 = Double.valueOf(VR2.getText());
+				double num3 = Double.valueOf(VR3.getText());
+				double num4 = Double.valueOf(VR4.getText());
+				double num5 = Double.valueOf(VR5.getText());
+				double num6 = Double.valueOf(VR6.getText());
+				
+				double rta1 = num1 - num4;
+				double rta2 = num2 - num5;
+				double rta3 = num3 - num6;
+				rt1.setText(String.valueOf(rta1));
+				rt2.setText(String.valueOf(rta2));
+				rt3.setText(String.valueOf(rta3));
+			}
+		});
+		botonresta.setBounds(144, 216, 74, 48);
+		panel1.add(botonresta);
+		
+		JLabel rta1 = new JLabel("(");
+		rta1.setForeground(new Color(255, 255, 255));
+		rta1.setFont(new Font("Arial Black", Font.BOLD, 25));
+		rta1.setBounds(262, 118, 12, 31);
+		panel1.add(rta1);
+		
+		JLabel lblNewLabel_1_1_1_1_1 = new JLabel(";");
+		lblNewLabel_1_1_1_1_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1_1_1_1_1.setFont(new Font("Arial Black", Font.BOLD, 25));
+		lblNewLabel_1_1_1_1_1.setBounds(329, 115, 12, 36);
+		panel1.add(lblNewLabel_1_1_1_1_1);
+		
+		JLabel lblNewLabel_1_1_1_2_1 = new JLabel(";");
+		lblNewLabel_1_1_1_2_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1_1_1_2_1.setFont(new Font("Arial Black", Font.BOLD, 25));
+		lblNewLabel_1_1_1_2_1.setBounds(400, 109, 12, 48);
+		panel1.add(lblNewLabel_1_1_1_2_1);
+		
+		JLabel lblNewLabel_1_2_1_1 = new JLabel(")");
+		lblNewLabel_1_2_1_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1_2_1_1.setFont(new Font("Arial Black", Font.BOLD, 25));
+		lblNewLabel_1_2_1_1.setBounds(470, 109, 36, 48);
+		panel1.add(lblNewLabel_1_2_1_1);
+		
+		rt1 = new JTextField();
+		rt1.setBounds(282, 129, 39, 20);
+		panel1.add(rt1);
+		rt1.setColumns(10);
+		
+		rt2 = new JTextField();
+		rt2.setColumns(10);
+		rt2.setBounds(351, 129, 39, 20);
+		panel1.add(rt2);
+		
+		rt3 = new JTextField();
+		rt3.setColumns(10);
+		rt3.setBounds(422, 129, 38, 20);
+		panel1.add(rt3);
+		
+		JButton btnNewButton = new JButton("Producto Escalar");
+		btnNewButton.setFont(new Font("Arial Black", Font.BOLD, 15));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double num1 = Double.valueOf(VR1.getText());
+				double num2 = Double.valueOf(VR2.getText());
+				double num3 = Double.valueOf(VR3.getText());
+				double num4 = Double.valueOf(VR4.getText());
+				double num5 = Double.valueOf(VR5.getText());
+				double num6 = Double.valueOf(VR6.getText());
+				
+				double rta4 = (num1 * num4) +(num2 * num5)+(num3 * num6);
+				rt4.setText(String.valueOf(rta4));
+			}
+		});
+		btnNewButton.setBounds(29, 283, 188, 47);
+		panel1.add(btnNewButton);
+		
+		JLabel rta1_1 = new JLabel("(");
+		rta1_1.setForeground(Color.WHITE);
+		rta1_1.setFont(new Font("Arial Black", Font.BOLD, 25));
+		rta1_1.setBounds(77, 330, 12, 31);
+		panel1.add(rta1_1);
+		
+		rt4 = new JTextField();
+		rt4.setColumns(10);
+		rt4.setBounds(98, 341, 39, 20);
+		panel1.add(rt4);
+		
+		JLabel lblNewLabel_1_2_1_1_1 = new JLabel(")");
+		lblNewLabel_1_2_1_1_1.setForeground(Color.WHITE);
+		lblNewLabel_1_2_1_1_1.setFont(new Font("Arial Black", Font.BOLD, 25));
+		lblNewLabel_1_2_1_1_1.setBounds(149, 331, 12, 29);
+		panel1.add(lblNewLabel_1_2_1_1_1);
+		
+		JButton btnProductoVectorial = new JButton("Producto Vectorial");
+		btnProductoVectorial.setFont(new Font("Arial Black", Font.BOLD, 15));
+		btnProductoVectorial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double num1 = Double.valueOf(VR1.getText());
+				double num2 = Double.valueOf(VR2.getText());
+				double num3 = Double.valueOf(VR3.getText());
+				double num4 = Double.valueOf(VR4.getText());
+				double num5 = Double.valueOf(VR5.getText());
+				double num6 = Double.valueOf(VR6.getText());
+				
+				double rta5 = ((num2 * num6) - (num3 * num5));
+				double rta6 = -1 * ((num1 * num6) - (num3 * num4));
+				double rta7 = ((num1 * num5) - (num2 * num4));
+				rt5.setText(String.valueOf(rta5));
+				rt6.setText(String.valueOf(rta6));
+				rt7.setText(String.valueOf(rta7));
+				
+			}
+		});
+		btnProductoVectorial.setBounds(236, 283, 224, 45);
+		panel1.add(btnProductoVectorial);
+		
+		JLabel rta1_2 = new JLabel("(");
+		rta1_2.setForeground(Color.WHITE);
+		rta1_2.setFont(new Font("Arial Black", Font.BOLD, 25));
+		rta1_2.setBounds(236, 330, 12, 31);
+		panel1.add(rta1_2);
+		
+		rt5 = new JTextField();
+		rt5.setColumns(10);
+		rt5.setBounds(262, 341, 39, 20);
+		panel1.add(rt5);
+		
+		JLabel lblNewLabel_1_1_1_1_1_1 = new JLabel(";");
+		lblNewLabel_1_1_1_1_1_1.setForeground(Color.WHITE);
+		lblNewLabel_1_1_1_1_1_1.setFont(new Font("Arial Black", Font.BOLD, 25));
+		lblNewLabel_1_1_1_1_1_1.setBounds(311, 330, 12, 36);
+		panel1.add(lblNewLabel_1_1_1_1_1_1);
+		
+		rt6 = new JTextField();
+		rt6.setColumns(10);
+		rt6.setBounds(329, 341, 39, 20);
+		panel1.add(rt6);
+		
+		JLabel lblNewLabel_1_1_1_2_1_1 = new JLabel(";");
+		lblNewLabel_1_1_1_2_1_1.setForeground(Color.WHITE);
+		lblNewLabel_1_1_1_2_1_1.setFont(new Font("Arial Black", Font.BOLD, 25));
+		lblNewLabel_1_1_1_2_1_1.setBounds(378, 321, 12, 48);
+		panel1.add(lblNewLabel_1_1_1_2_1_1);
+		
+		rt7 = new JTextField();
+		rt7.setColumns(10);
+		rt7.setBounds(400, 341, 38, 20);
+		panel1.add(rt7);
+		
+		JLabel lblNewLabel_1_2_1_1_2 = new JLabel(")");
+		lblNewLabel_1_2_1_1_2.setForeground(Color.WHITE);
+		lblNewLabel_1_2_1_1_2.setFont(new Font("Arial Black", Font.BOLD, 25));
+		lblNewLabel_1_2_1_1_2.setBounds(448, 321, 36, 48);
+		panel1.add(lblNewLabel_1_2_1_1_2);
+		
+		JButton btnNewButton_1 = new JButton("ATRAS");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CalculadoraVectores Cv = new CalculadoraVectores ();
+				Cv.show();
+			dispose();
+			}
+		});
+		btnNewButton_1.setBounds(465, 17, 89, 23);
+		panel1.add(btnNewButton_1);
+		
+		JLabel lblVector = new JLabel("VECTOR 2");
+		lblVector.setHorizontalAlignment(SwingConstants.CENTER);
+		lblVector.setForeground(new Color(221, 221, 221));
+		lblVector.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		lblVector.setBounds(10, 126, 217, 31);
+		panel1.add(lblVector);
+		
+		JLabel lblResultado = new JLabel("RESULTADO");
+		lblResultado.setHorizontalAlignment(SwingConstants.CENTER);
+		lblResultado.setForeground(new Color(221, 221, 221));
+		lblResultado.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		lblResultado.setBounds(262, 87, 217, 31);
+		panel1.add(lblResultado);
+		
+		VRR1 = new JTextField();
+		VRR1.setHorizontalAlignment(SwingConstants.CENTER);
+		VRR1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		VRR1.setColumns(10);
+		VRR1.setBounds(220, 393, 83, 46);
+		panel1.add(VRR1);
+		
+		JButton btnVectXEscl = new JButton("Vect 1 x Escl");
+		btnVectXEscl.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double num1 = Double.valueOf(VR1.getText());
+				double num2 = Double.valueOf(VR2.getText());
+				double num3 = Double.valueOf(VR3.getText());
+			
+				double deter = Double.valueOf(VRR1.getText());
+				double rta11 = num1 * deter;
+				double rta12 = num2 * deter;
+				double rta13 = num3 * deter;
+				rt1.setText(String.valueOf(rta11));
+				rt2.setText(String.valueOf(rta12));
+				rt3.setText(String.valueOf(rta13));
+			}
+		});
+		btnVectXEscl.setFont(new Font("Arial Black", Font.BOLD, 15));
+		btnVectXEscl.setBounds(29, 394, 188, 45);
+		panel1.add(btnVectXEscl);
+	}
+}
