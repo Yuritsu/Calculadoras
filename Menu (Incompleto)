@@ -1,0 +1,123 @@
+package Grafico;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.SystemColor;
+import javax.swing.SwingConstants;
+
+public class Menu extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Menu frame = new Menu();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Menu() {
+		setTitle("Menu");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.menu);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Menu");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 25));
+		lblNewLabel.setBounds(156, 15, 153, 63);
+		contentPane.add(lblNewLabel);
+		
+		JButton btnsistecu =new JButton("Sistemas de Ecuaciones");
+		btnsistecu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				
+				//aca
+				
+				
+				
+			}
+		});
+		btnsistecu.setFont(new Font("Arial", Font.BOLD, 14));
+		btnsistecu.setBounds(105, 218, 243, 32);
+		contentPane.add(btnsistecu);
+		
+		JButton btnmatriz = new JButton("Operaciones con Matrices");
+		btnmatriz.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				
+		  
+				CalculadoraMatriz CM1 = new CalculadoraMatriz();
+                            CM1.setVisible(true);
+				
+				
+			}
+		});
+		btnmatriz.setFont(new Font("Arial", Font.BOLD, 14));
+		btnmatriz.setBounds(105, 175, 243, 32);
+		contentPane.add(btnmatriz);
+		
+		JButton btnvector = new JButton("Operaciones con Vectores");
+		btnvector.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				
+				//aca
+				
+				
+				
+			}
+		});
+		btnvector.setFont(new Font("Arial", Font.BOLD, 14));
+		btnvector.setBounds(105, 132, 243, 32);
+		contentPane.add(btnvector);
+		
+		JButton btnbase = new JButton("Operaciones Cotidianas");
+		btnbase.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				
+				CalculadoraBase c1 = new CalculadoraBase();
+				c1.setVisible(true);
+				
+				
+				
+			}
+		});
+		btnbase.setFont(new Font("Arial", Font.BOLD, 14));
+		btnbase.setBounds(105, 89, 243, 32);
+		contentPane.add(btnbase);
+	}
+}
