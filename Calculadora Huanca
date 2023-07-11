@@ -55,7 +55,7 @@ public class CalculadoraBase extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 289, 479);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(224, 255, 255));
+		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -64,7 +64,7 @@ public class CalculadoraBase extends JFrame {
 		
 		
 		txtpantalla = new JTextField();
-		txtpantalla.setBackground(Color.CYAN);
+		txtpantalla.setBackground(Color.LIGHT_GRAY);
 		txtpantalla.setHorizontalAlignment(SwingConstants.RIGHT);
 		txtpantalla.setFont(new Font("Arial", Font.BOLD, 20));
 		txtpantalla.setBounds(10, 11, 255, 62);
@@ -172,7 +172,7 @@ public class CalculadoraBase extends JFrame {
 					
 				}
 				else if(operacion == "√") {
-					resultado = Math.pow(numero1, (1/numero2));
+					resultado = Math.pow(numero2, (1/numero1));
 					seleccionar = String.format("%.3f",resultado);
 					txtpantalla.setText(seleccionar);
 				}
@@ -456,7 +456,7 @@ public class CalculadoraBase extends JFrame {
 				
 			}
 		});
-		btnelevado.setForeground(Color.ORANGE);
+		btnelevado.setForeground(new Color(255, 200, 0));
 		btnelevado.setFont(new Font("Arial", Font.BOLD, 18));
 		btnelevado.setBackground(Color.BLACK);
 		btnelevado.setBounds(10, 84, 45, 50);
@@ -488,6 +488,14 @@ public class CalculadoraBase extends JFrame {
 		btnNewButton.setBackground(Color.BLACK);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				
+				
+				Menu M1 = new Menu();
+				M1.setVisible(true);
+				
+				
+			
 			}
 		});
 		btnNewButton.setBounds(10, 389, 255, 40);
