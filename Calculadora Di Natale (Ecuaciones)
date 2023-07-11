@@ -1,0 +1,981 @@
+package Grafico;
+
+import java.awt.EventQueue;
+import java.lang.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JOptionPane;
+import javax.swing.border.EmptyBorder;
+import javax.swing.UIManager;
+import java.awt.Window.Type;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Color;
+
+public class CalculadoraEcuaciones extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField ddcc;
+	private JTextField ddcu;
+	private JTextField ddcd;
+	private JTextField dduc;
+	private JTextField dduu;
+	private JTextField ddud;
+	private JTextField ttcc;
+	private JTextField ttcu;
+	private JTextField ttct;
+	private JTextField ttuc;
+	private JTextField ttuu;
+	private JTextField ttut;
+	private JTextField ttdc;
+	private JTextField ttdu;
+	private JTextField ttdt;
+	private JTextField ttcd;
+	private JTextField ttud;
+	private JTextField ttdd;
+	private JTextField xf;
+	private JTextField yf;
+	private JButton dos;
+	private JButton tres;
+	private JButton uno;
+	private JButton borrar;
+	private JButton cinco;
+	private JButton seis;
+	private JButton cuatro;
+	private JButton cero;
+	private JButton ocho;
+	private JButton nueve;
+	private JButton siete;
+	private JButton igual;
+	private JTextField zf;
+	private JButton atras;
+	private JButton coma;
+	private JButton anterior;
+	private JTextField valor;
+	private JButton siguiente;
+	String ingresado;
+	boolean dds = false, tts = false;
+	int pos = 1;
+	int i, j, menu4, end=0;
+	float[][] tt = new float[3][4];
+	float[][] dd = new float[2][3];
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					CalculadoraEcuaciones frame = new CalculadoraEcuaciones();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public CalculadoraEcuaciones() {
+		setResizable(false);
+		setBackground(UIManager.getColor("Button.disabledForeground"));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton sist2x2 = new JButton("Sistema 2x2");
+		sist2x2.setForeground(Color.BLACK);
+		sist2x2.setBackground(new Color(212, 212, 212));
+		sist2x2.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		sist2x2.setBounds(22, 43, 180, 80);
+		contentPane.add(sist2x2);
+		
+		JButton sist3x3 = new JButton("Sistema 3x3");
+		sist3x3.setForeground(Color.BLACK);
+		sist3x3.setBackground(new Color(212, 212, 212));
+		sist3x3.setBounds(230, 43, 180, 80);
+		sist3x3.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		contentPane.add(sist3x3);
+		
+		ddcc = new JTextField();
+		ddcc.setEditable(false);
+		ddcc.setForeground(Color.BLACK);
+		ddcc.setVisible(false);
+		ddcc.setBackground(new Color(212, 212, 212));
+		ddcc.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ddcc.setBounds(67, 11, 60, 20);
+		contentPane.add(ddcc);
+		ddcc.setColumns(10);
+		
+		ddcu = new JTextField();
+		ddcu.setEditable(false);
+		ddcu.setForeground(Color.BLACK);
+		ddcu.setVisible(false);
+		ddcu.setBackground(new Color(212, 212, 212));
+		ddcu.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ddcu.setBounds(134, 11, 60, 20);
+		contentPane.add(ddcu);
+		ddcu.setColumns(10);
+		
+		ddcd = new JTextField();
+		ddcd.setEditable(false);
+		ddcd.setForeground(Color.BLACK);
+		ddcd.setVisible(false);
+		ddcd.setBackground(new Color(212, 212, 212));
+		ddcd.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ddcd.setBounds(202, 11, 60, 20);
+		contentPane.add(ddcd);
+		ddcd.setColumns(10);
+		
+		dduc = new JTextField();
+		dduc.setEditable(false);
+		dduc.setForeground(Color.BLACK);
+		dduc.setVisible(false);
+		dduc.setBackground(new Color(212, 212, 212));
+		dduc.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		dduc.setBounds(67, 41, 60, 20);
+		contentPane.add(dduc);
+		dduc.setColumns(10);
+		
+		dduu = new JTextField();
+		dduu.setEditable(false);
+		dduu.setForeground(Color.BLACK);
+		dduu.setVisible(false);
+		dduu.setBackground(new Color(212, 212, 212));
+		dduu.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		dduu.setBounds(134, 41, 60, 20);
+		contentPane.add(dduu);
+		dduu.setColumns(10);
+		
+		ddud = new JTextField();
+		ddud.setEditable(false);
+		ddud.setForeground(Color.BLACK);
+		ddud.setVisible(false);
+		ddud.setBackground(new Color(212, 212, 212));
+		ddud.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ddud.setBounds(202, 41, 60, 20);
+		contentPane.add(ddud);
+		ddud.setColumns(10);
+		
+		ttcc = new JTextField();
+		ttcc.setEditable(false);
+		ttcc.setForeground(Color.BLACK);
+		ttcc.setVisible(false);
+		ttcc.setBackground(new Color(212, 212, 212));
+		ttcc.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ttcc.setBounds(67, 11, 40, 20);
+		contentPane.add(ttcc);
+		ttcc.setColumns(10);
+		
+		ttcu = new JTextField();
+		ttcu.setEditable(false);
+		ttcu.setForeground(Color.BLACK);
+		ttcu.setVisible(false);
+		ttcu.setBackground(new Color(212, 212, 212));
+		ttcu.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ttcu.setBounds(117, 11, 40, 20);
+		contentPane.add(ttcu);
+		ttcu.setColumns(10);
+		
+		ttct = new JTextField();
+		ttct.setEditable(false);
+		ttct.setForeground(Color.BLACK);
+		ttct.setVisible(false);
+		ttct.setBackground(new Color(212, 212, 212));
+		ttct.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ttct.setBounds(217, 11, 40, 20);
+		contentPane.add(ttct);
+		ttct.setColumns(10);
+		
+		ttuc = new JTextField();
+		ttuc.setEditable(false);
+		ttuc.setForeground(Color.BLACK);
+		ttuc.setVisible(false);
+		ttuc.setBackground(new Color(212, 212, 212));
+		ttuc.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ttuc.setBounds(67, 42, 40, 20);
+		contentPane.add(ttuc);
+		ttuc.setColumns(10);
+		
+		ttuu = new JTextField();
+		ttuu.setEditable(false);
+		ttuu.setForeground(Color.BLACK);
+		ttuu.setVisible(false);
+		ttuu.setBackground(new Color(212, 212, 212));
+		ttuu.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ttuu.setBounds(117, 42, 40, 20);
+		contentPane.add(ttuu);
+		ttuu.setColumns(10);
+		
+		ttut = new JTextField();
+		ttut.setEditable(false);
+		ttut.setForeground(Color.BLACK);
+		ttut.setVisible(false);
+		ttut.setBackground(new Color(212, 212, 212));
+		ttut.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ttut.setBounds(217, 42, 40, 20);
+		contentPane.add(ttut);
+		ttut.setColumns(10);
+		
+		ttdc = new JTextField();
+		ttdc.setEditable(false);
+		ttdc.setForeground(Color.BLACK);
+		ttdc.setBackground(new Color(212, 212, 212));
+		ttdc.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ttdc.setVisible(false);
+		ttdc.setColumns(10);
+		ttdc.setBounds(67, 73, 40, 20);
+		contentPane.add(ttdc);
+		
+		ttdu = new JTextField();
+		ttdu.setEditable(false);
+		ttdu.setForeground(Color.BLACK);
+		ttdu.setBackground(new Color(212, 212, 212));
+		ttdu.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ttdu.setVisible(false);
+		ttdu.setColumns(10);
+		ttdu.setBounds(117, 73, 40, 20);
+		contentPane.add(ttdu);
+		
+		ttdt = new JTextField();
+		ttdt.setEditable(false);
+		ttdt.setForeground(Color.BLACK);
+		ttdt.setBackground(new Color(212, 212, 212));
+		ttdt.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ttdt.setVisible(false);
+		ttdt.setColumns(10);
+		ttdt.setBounds(217, 73, 40, 20);
+		contentPane.add(ttdt);
+		
+		ttcd = new JTextField();
+		ttcd.setEditable(false);
+		ttcd.setForeground(Color.BLACK);
+		ttcd.setBackground(new Color(212, 212, 212));
+		ttcd.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ttcd.setVisible(false);
+		ttcd.setColumns(10);
+		ttcd.setBounds(167, 11, 40, 20);
+		contentPane.add(ttcd);
+		
+		ttud = new JTextField();
+		ttud.setEditable(false);
+		ttud.setForeground(Color.BLACK);
+		ttud.setBackground(new Color(212, 212, 212));
+		ttud.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ttud.setVisible(false);
+		ttud.setColumns(10);
+		ttud.setBounds(167, 42, 40, 20);
+		contentPane.add(ttud);
+		
+		ttdd = new JTextField();
+		ttdd.setEditable(false);
+		ttdd.setForeground(Color.BLACK);
+		ttdd.setBackground(new Color(212, 212, 212));
+		ttdd.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		ttdd.setVisible(false);
+		ttdd.setColumns(10);
+		ttdd.setBounds(167, 73, 40, 20);
+		contentPane.add(ttdd);
+		
+		xf = new JTextField();
+		xf.setForeground(Color.BLACK);
+		xf.setVisible(false);
+		xf.setEditable(false);
+		xf.setBackground(new Color(212, 212, 212));
+		xf.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		xf.setBounds(295, 11, 50, 20);
+		contentPane.add(xf);
+		xf.setColumns(10);
+		
+		yf = new JTextField();
+		yf.setForeground(Color.BLACK);
+		yf.setVisible(false);
+		yf.setEditable(false);
+		yf.setBackground(new Color(212, 212, 212));
+		yf.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		yf.setBounds(295, 41, 50, 20);
+		contentPane.add(yf);
+		yf.setColumns(10);
+		
+		zf = new JTextField();
+		zf.setForeground(Color.BLACK);
+		zf.setBackground(new Color(212, 212, 212));
+		zf.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
+		zf.setVisible(false);
+		zf.setEditable(false);
+		zf.setColumns(10);
+		zf.setBounds(295, 71, 50, 20);
+		contentPane.add(zf);
+		
+		dos = new JButton("2");
+		dos.setForeground(Color.BLACK);
+		dos.setVisible(false);
+		dos.setBackground(new Color(212, 212, 212));
+		dos.setBounds(121, 159, 89, 23);
+		contentPane.add(dos);
+		
+		tres = new JButton("3");
+		tres.setForeground(Color.BLACK);
+		tres.setVisible(false);
+		tres.setBackground(new Color(212, 212, 212));
+		tres.setBounds(222, 159, 89, 23);
+		contentPane.add(tres);
+		
+		uno = new JButton("1");
+		uno.setForeground(Color.BLACK);
+		uno.setVisible(false);
+		uno.setBackground(new Color(212, 212, 212));
+		uno.setBounds(22, 159, 89, 23);
+		contentPane.add(uno);
+		
+		borrar = new JButton("←");
+		borrar.setForeground(Color.BLACK);
+		borrar.setVisible(false);
+		borrar.setBackground(new Color(212, 212, 212));
+		borrar.setBounds(330, 123, 80, 23);
+		contentPane.add(borrar);
+		
+		cinco = new JButton("5");
+		cinco.setForeground(Color.BLACK);
+		cinco.setVisible(false);
+		cinco.setBackground(new Color(212, 212, 212));
+		cinco.setBounds(121, 193, 89, 23);
+		contentPane.add(cinco);
+		
+		seis = new JButton("6");
+		seis.setForeground(Color.BLACK);
+		seis.setVisible(false);
+		seis.setBackground(new Color(212, 212, 212));
+		seis.setBounds(222, 193, 89, 23);
+		contentPane.add(seis);
+		
+		cuatro = new JButton("4");
+		cuatro.setForeground(Color.BLACK);
+		cuatro.setVisible(false);
+		cuatro.setBackground(new Color(212, 212, 212));
+		cuatro.setBounds(22, 193, 89, 23);
+		contentPane.add(cuatro);
+		
+		cero = new JButton("0");
+		cero.setForeground(Color.BLACK);
+		cero.setVisible(false);
+		cero.setBackground(new Color(212, 212, 212));
+		cero.setBounds(321, 227, 89, 23);
+		contentPane.add(cero);
+		
+		ocho = new JButton("8");
+		ocho.setForeground(Color.BLACK);
+		ocho.setVisible(false);
+		ocho.setBackground(new Color(212, 212, 212));
+		ocho.setBounds(121, 227, 89, 23);
+		contentPane.add(ocho);
+		
+		nueve = new JButton("9");
+		nueve.setForeground(Color.BLACK);
+		nueve.setVisible(false);
+		nueve.setBackground(new Color(212, 212, 212));
+		nueve.setBounds(222, 227, 89, 23);
+		contentPane.add(nueve);
+		
+		siete = new JButton("7");
+		siete.setForeground(Color.BLACK);
+		siete.setVisible(false);
+		siete.setBackground(new Color(212, 212, 212));
+		siete.setBounds(22, 227, 89, 23);
+		contentPane.add(siete);
+		
+		igual = new JButton("=");
+		igual.setForeground(Color.BLACK);
+		igual.setVisible(false);
+		igual.setBackground(new Color(212, 212, 212));
+		igual.setBounds(320, 159, 89, 23);
+		contentPane.add(igual);
+		
+		atras = new JButton("Go back");
+		atras.setForeground(Color.BLACK);
+		atras.setVisible(false);
+		atras.setBackground(new Color(212, 212, 212));
+		atras.setBounds(22, 123, 80, 23);
+		contentPane.add(atras);
+		
+		coma = new JButton(".");
+		coma.setForeground(Color.BLACK);
+		coma.setVisible(false);
+		coma.setBackground(new Color(212, 212, 212));
+		coma.setBounds(320, 193, 89, 23);
+		contentPane.add(coma);
+		
+		valor = new JTextField();
+		valor.setVisible (false);
+		valor.setBackground(new Color(212, 212, 212));
+		valor.setBounds(174, 124, 86, 20);
+		contentPane.add(valor);
+		valor.setColumns(10);
+		
+		JButton anterior = new JButton("←");
+		anterior.setEnabled(false);
+		anterior.setVisible (false);
+		anterior.setBackground(new Color(212, 212, 212));
+		anterior.setForeground(Color.BLACK);
+		anterior.setBounds(110, 123, 50, 23);
+		contentPane.add(anterior);
+		
+		JButton siguiente = new JButton("→");
+		siguiente.setVisible (false);
+		siguiente.setForeground(Color.BLACK);
+		siguiente.setBackground(new Color(212, 212, 212));
+		siguiente.setBounds(270, 123, 50, 23);
+		contentPane.add(siguiente);
+		
+		JButton volver = new JButton("↓");
+		volver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+                Menu M1 = new Menu();
+                M1.setVisible(true);
+			}
+		});
+		volver.setForeground(Color.BLUE);
+		volver.setFont(new Font("Tahoma", Font.BOLD, 18));
+		volver.setBackground(Color.LIGHT_GRAY);
+		volver.setBounds(22, 159, 388, 46);
+		contentPane.add(volver);
+		
+		sist2x2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				sist2x2.setVisible (false);
+				sist3x3.setVisible (false);
+				volver.setVisible (false);
+				xf.setVisible (true);
+				yf.setVisible (true);
+				ddcc.setVisible (true);
+				ddcu.setVisible (true);
+				ddcd.setVisible (true);
+				dduc.setVisible (true);
+				dduu.setVisible (true);
+				ddud.setVisible (true);
+				uno.setVisible (true);
+				dos.setVisible (true);
+				tres.setVisible (true);
+				cuatro.setVisible (true);
+				cinco.setVisible (true);
+				seis.setVisible (true);
+				siete.setVisible (true);
+				ocho.setVisible (true);
+				nueve.setVisible (true);
+				cero.setVisible (true);
+				igual.setVisible (true);
+				coma.setVisible (true);
+				borrar.setVisible (true);
+				atras.setVisible (true);
+				anterior.setVisible (true);
+				valor.setVisible (true);
+				siguiente.setVisible (true);
+				dds = true;
+				siguiente.setEnabled(true);
+				anterior.setEnabled(false);
+			}
+		});
+		
+		sist3x3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				sist2x2.setVisible (false);
+				sist3x3.setVisible (false);
+				volver.setVisible (false);
+				xf.setVisible (true);
+				yf.setVisible (true);
+				zf.setVisible (true);
+				ttcc.setVisible (true);
+				ttcu.setVisible (true);
+				ttct.setVisible (true);
+				ttuc.setVisible (true);
+				ttuu.setVisible (true);
+				ttut.setVisible (true);
+				ttdc.setVisible (true);
+				ttdu.setVisible (true);
+				ttdt.setVisible (true);
+				ttcd.setVisible (true);
+				ttud.setVisible (true);
+				ttdd.setVisible (true);
+				atras.setVisible (true);
+				uno.setVisible (true);
+				dos.setVisible (true);
+				tres.setVisible (true);
+				cuatro.setVisible (true);
+				cinco.setVisible (true);
+				seis.setVisible (true);
+				siete.setVisible (true);
+				ocho.setVisible (true);
+				nueve.setVisible (true);
+				cero.setVisible (true);
+				igual.setVisible (true);
+				coma.setVisible (true);
+				borrar.setVisible (true);
+				atras.setVisible (true);
+				anterior.setVisible (true);
+				valor.setVisible (true);
+				siguiente.setVisible (true);
+				tts = true;
+				siguiente.setEnabled(true);
+				anterior.setEnabled(false);
+			}
+		});
+		atras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				atras.setVisible (false);
+				uno.setVisible (false);
+				dos.setVisible (false);
+				tres.setVisible (false);
+				cuatro.setVisible (false);
+				cinco.setVisible (false);
+				seis.setVisible (false);
+				siete.setVisible (false);
+				ocho.setVisible (false);
+				nueve.setVisible (false);
+				cero.setVisible (false);
+				igual.setVisible (false);
+				coma.setVisible (false);
+				borrar.setVisible (false);
+				atras.setVisible (false);
+				xf.setVisible (false);
+				yf.setVisible (false);
+				zf.setVisible (false);
+				ddcc.setVisible (false);
+				ddcu.setVisible (false);
+				ddcd.setVisible (false);
+				dduc.setVisible (false);
+				dduu.setVisible (false);
+				ddud.setVisible (false);
+				ttcc.setVisible (false);
+				ttcu.setVisible (false);
+				ttct.setVisible (false);
+				ttuc.setVisible (false);
+				ttuu.setVisible (false);
+				ttut.setVisible (false);
+				ttdc.setVisible (false);
+				ttdu.setVisible (false);
+				ttdt.setVisible (false);
+				ttcd.setVisible (false);
+				ttud.setVisible (false);
+				ttdd.setVisible (false);
+				sist2x2.setVisible (true);
+				sist3x3.setVisible (true);
+				volver.setVisible (true);
+				anterior.setVisible (false);
+				valor.setVisible (false);
+				valor.setEnabled(true);
+				siguiente.setVisible (false);
+				if(dds == true)
+				{
+					dds = false;
+				}
+				if(tts == true)
+				{
+					tts = false;
+				}
+				ddcc.setText("");
+				ddcu.setText("");
+				ddcd.setText("");
+				dduc.setText("");
+				dduu.setText("");
+				ddud.setText("");
+				ttcc.setText("");
+				ttcu.setText("");
+				ttcd.setText("");
+				ttct.setText("");
+				ttuc.setText("");
+				ttuu.setText("");
+				ttud.setText("");
+				ttut.setText("");
+				ttdc.setText("");
+				ttdu.setText("");
+				ttdd.setText("");
+				ttdt.setText("");
+				valor.setText("");
+				xf.setText("");
+				yf.setText("");
+				zf.setText("");
+				pos = 0;
+			}
+		});
+		uno.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ingresado = valor.getText() + uno.getText();
+				valor.setText(ingresado);
+			}
+		});
+		dos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ingresado = valor.getText() + dos.getText();
+				valor.setText(ingresado);
+			}
+		});
+		tres.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ingresado = valor.getText() + tres.getText();
+				valor.setText(ingresado);
+			}
+		});
+		cuatro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ingresado = valor.getText() + cuatro.getText();
+				valor.setText(ingresado);
+			}
+		});
+		cinco.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ingresado = valor.getText() + cinco.getText();
+				valor.setText(ingresado);
+			}
+		});
+		seis.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ingresado = valor.getText() + seis.getText();
+				valor.setText(ingresado);
+			}
+		});
+		siete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ingresado = valor.getText() + siete.getText();
+				valor.setText(ingresado);
+			}
+		});
+		ocho.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ingresado = valor.getText() + ocho.getText();
+				valor.setText(ingresado);
+			}
+		});
+		nueve.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ingresado = valor.getText() + nueve.getText();
+				valor.setText(ingresado);
+			}
+		});
+		cero.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ingresado = valor.getText() + cero.getText();
+				valor.setText(ingresado);
+			}
+		});
+		coma.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ingresado = valor.getText() + coma.getText();
+				valor.setText(ingresado);
+			}
+		});
+		igual.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(dds == true)
+				{
+					dd[0][0] = Float.parseFloat(ddcc.getText());
+					dd[0][1] = Float.parseFloat(ddcu.getText());
+					dd[0][2] = Float.parseFloat(ddcd.getText());
+					dd[1][0] = Float.parseFloat(dduc.getText());
+					dd[1][1] = Float.parseFloat(dduu.getText());
+					dd[1][2] = Float.parseFloat(ddud.getText());
+					float det, detx, dety, x, y;
+					det=(dd[0][0]*dd[1][1])-(dd[0][1]*dd[1][0]);
+					detx=(dd[0][2]*dd[1][1])-(dd[0][1]*dd[1][2]);
+					dety=(dd[0][0]*dd[1][2])-(dd[0][2]*dd[1][0]);
+					x=detx/det;
+					y=dety/det;
+					if(det == 0)
+					{
+						JOptionPane.showMessageDialog(null,"\ncontiene soluciones infinitas, por lo que la maquina no lo puede resolver");
+					}
+					if(det!=0&&dd[0][2]-(dd[0][0]*x)-(dd[0][1]*y)!=0||dd[1][2]-(dd[1][0]*x)-(dd[1][1]*y)!=0)
+					{
+						JOptionPane.showMessageDialog(null, "\nla matriz de 2x2 dada es un absurdo o es un numero con el que no se puede confirmar la validez de los valores, por lo que la maquina no lo puede resolver");
+					}
+					xf.setText(Float.toString(x));
+					yf.setText(Float.toString(y));
+				}
+				if(tts == true)
+				{
+					tt[0][0] = Float.parseFloat(ttcc.getText());
+					tt[0][1] = Float.parseFloat(ttcu.getText());
+					tt[0][2] = Float.parseFloat(ttcd.getText());
+					tt[0][3] = Float.parseFloat(ttct.getText());
+					tt[1][0] = Float.parseFloat(ttuc.getText());
+					tt[1][1] = Float.parseFloat(ttuu.getText());
+					tt[1][2] = Float.parseFloat(ttud.getText());
+					tt[1][3] = Float.parseFloat(ttut.getText());
+					tt[2][0] = Float.parseFloat(ttdc.getText());
+					tt[2][1] = Float.parseFloat(ttdu.getText());
+					tt[2][2] = Float.parseFloat(ttdd.getText());
+					tt[2][3] = Float.parseFloat(ttdt.getText());
+					float det, detx, dety, detz, x, y, z;
+					det=((tt[0][0]*tt[1][1]*tt[2][2])+(tt[1][0]*tt[2][1]*tt[0][2])+(tt[2][0]*tt[0][1]*tt[1][2]))-((tt[0][2]*tt[1][1]*tt[2][0])+(tt[1][2]*tt[2][1]*tt[0][0])+(tt[2][2]*tt[0][1]*tt[1][0]));
+					detx=(tt[0][3]*tt[1][1]*tt[2][2]+tt[0][1]*tt[1][2]*tt[2][3]+tt[0][2]*tt[1][3]*tt[2][1])-(tt[0][2]*tt[1][1]*tt[2][3]+tt[0][3]*tt[1][2]*tt[2][1]+tt[0][1]*tt[1][3]*tt[2][2]);
+					dety=(tt[0][0]*tt[1][3]*tt[2][2]+tt[1][0]*tt[2][3]*tt[0][2]+tt[2][0]*tt[0][3]*tt[1][2])-(tt[0][2]*tt[1][3]*tt[2][0]+tt[1][2]*tt[2][3]*tt[0][0]+tt[2][2]*tt[0][3]*tt[1][0]);
+					detz=(tt[0][0]*tt[1][1]*tt[2][3]+tt[0][1]*tt[1][3]*tt[2][0]+tt[0][3]*tt[1][0]*tt[2][1])-(tt[0][3]*tt[1][1]*tt[2][0]+tt[0][0]*tt[1][3]*tt[2][1]+tt[0][1]*tt[1][0]*tt[2][3]);
+					x=detx/det;
+					y=dety/det;
+					z=detz/det;
+					xf.setText(Float.toString(x));
+					yf.setText(Float.toString(y));
+					zf.setText(Float.toString(z));
+					if(det == 0)
+					{
+						JOptionPane.showMessageDialog(null,"\ncontiene soluciones infinitas, por lo que la maquina no lo puede resolver");
+					}
+					else 
+					{
+						if(det != 0 && tt[0][3]-(tt[0][0]*x+tt[0][1]*y+tt[0][2]*z)!=0||tt[1][3]-(tt[1][0]*x+tt[1][1]*y+tt[1][2]*z)!=0||tt[2][3]-(tt[2][0]*x+tt[2][1]*y+tt[2][2]*z)!=0)
+						{
+							JOptionPane.showMessageDialog(null,"\nla matriz de 3x3 dada es un absurdo o es un numero con el que no se puede confirmar la validez de los valores, por lo que la maquina no lo puede resolver");
+						}
+					}
+				}
+			}
+		});
+		borrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor.setText("");
+			}
+		});
+		anterior.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor.setText("");
+				if(pos == 1)
+				{
+					if(dds == true)
+					{
+						valor.setText(ddcc.getText());
+					}
+					if(tts == true)
+					{
+						valor.setText(ttcc.getText());
+					}
+				}
+				if(pos == 2 )
+				{
+					anterior.setEnabled(false);
+					if(dds == true)
+					{
+						valor.setText(ddcu.getText());
+					}
+					if(tts == true)
+					{
+						valor.setText(ttcu.getText());
+					}
+				}
+				if(pos == 3 )
+				{
+					if(dds == true)
+					{
+						valor.setText(ddcd.getText());
+					}
+					if(tts == true)
+					{
+						valor.setText(ttcd.getText());
+					}
+				}
+				if(pos == 4 )
+				{
+					if(dds == true)
+					{
+						valor.setText(dduc.getText());
+					}
+					if(tts == true)
+					{
+						valor.setText(ttct.getText());
+					}
+				}
+				if(pos == 5 )
+				{
+					if(dds == true)
+					{
+						valor.setText(dduu.getText());
+					}
+					if(tts == true)
+					{
+						valor.setText(ttuc.getText());
+					}
+				}
+				if(pos == 6 )
+				{
+					if(dds == true)
+					{
+						valor.setEnabled(true);
+						valor.setText(ddud.getText());
+					}
+					if(tts == true)
+					{
+						valor.setText(ttuu.getText());
+					}
+				}
+				if(pos == 7 )
+				{
+					if(dds == true)
+					{
+						siguiente.setEnabled(true);
+						valor.setEnabled(true);
+					}
+					valor.setText(ttud.getText());
+				}
+				if(pos == 8)
+				{
+					valor.setText(ttut.getText());
+				}
+				if(pos == 9)
+				{
+					valor.setText(ttdc.getText());
+				}
+				if(pos == 10 )
+				{
+					valor.setText(ttdu.getText());
+				}
+				if(pos == 11)
+				{
+					valor.setText(ttdd.getText());
+				}
+				if(pos == 12)
+				{
+					valor.setEnabled(true);
+					valor.setText(ttdt.getText());
+					siguiente.setEnabled(true);
+				}
+				pos = pos - 1;
+			}
+		});
+		siguiente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ingresado = valor.getText();
+				if(ingresado.equals(""))
+				{
+					ingresado = "0";
+				}
+				if(pos == 1)
+				{
+					anterior.setEnabled(true);
+					if(dds == true)
+					{
+						ddcc.setText(ingresado);
+						valor.setText(ddcu.getText());
+					}
+					if(tts == true)
+					{
+						ttcc.setText(ingresado);
+						valor.setText(ttcu.getText());
+					}
+				}
+				if(pos == 2)
+				{
+					if(dds == true)
+					{
+						ddcu.setText(ingresado);
+						valor.setText(ddcd.getText());
+					}
+					if(tts == true)
+					{
+						ttcu.setText(ingresado);
+						valor.setText(ttcd.getText());
+					}
+				}
+				if(pos == 3)
+				{
+					anterior.setEnabled(true);
+					if(dds == true)
+					{
+						ddcd.setText(ingresado);
+						valor.setText(dduc.getText());
+					}
+					if(tts == true)
+					{
+						ttcd.setText(ingresado);
+						valor.setText(ttct.getText());
+					}
+				}
+				if(pos == 4)
+				{
+					if(dds == true)
+					{
+						dduc.setText(ingresado);
+						valor.setText(dduu.getText());
+					}
+					if(tts == true)
+					{
+						ttct.setText(ingresado);
+						valor.setText(ttuc.getText());
+					}
+				}
+				if(pos == 5)
+				{
+					if(dds == true)
+					{
+						dduu.setText(ingresado);
+						valor.setText(ddud.getText());
+					}
+					if(tts == true)
+					{
+						ttuc.setText(ingresado);
+						valor.setText(ttuu.getText());
+					}
+				}
+				if(pos == 6)
+				{
+					if(dds == true)
+					{
+						ddud.setText(ingresado);
+						valor.setText("");
+						valor.setEnabled(false);
+						siguiente.setEnabled(false);
+					}
+					if(tts == true)
+					{
+						ttuu.setText(ingresado);
+						valor.setText(ttud.getText());
+					}
+				}
+				if(pos == 7)
+				{
+					if(tts == true)
+					{
+						ttud.setText(ingresado);
+						valor.setText(ttut.getText());
+					}
+				}
+				if(pos == 8)
+				{
+					ttut.setText(ingresado);
+					valor.setText(ttdc.getText());
+				}
+				if(pos == 9)
+				{
+					ttdc.setText(ingresado);
+					valor.setText(ttdu.getText());
+				}
+				if(pos == 10)
+				{
+					ttdu.setText(ingresado);
+					valor.setText(ttdd.getText());
+				}
+				if(pos == 11)
+				{
+					ttdd.setText(ingresado);
+					valor.setText(ttdt.getText());
+				}
+				if(pos == 12)
+				{
+					ttdt.setText(ingresado);
+					valor.setText("");
+					valor.setEnabled(false);
+					siguiente.setEnabled(false);
+				}
+				pos = pos + 1;
+			}
+		});
+	}
+}
