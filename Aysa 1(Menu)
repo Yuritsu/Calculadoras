@@ -1,0 +1,84 @@
+package Grafico;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Font;
+
+public class CalculadoraVectores extends JFrame {
+
+	private JPanel panelprincipal;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					CalculadoraVectores frame = new CalculadoraVectores();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public CalculadoraVectores() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 573, 480);
+		panelprincipal = new JPanel();
+		panelprincipal.setBackground(new Color(27, 27, 27));
+		panelprincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(panelprincipal);
+		panelprincipal.setLayout(null);
+		
+		JButton VECTORESR3 = new JButton("VECTORES R3");
+		VECTORESR3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) { 
+				vectoresr2 v2 = new vectoresr2 ();
+				v2.show();
+			dispose();
+			}
+		});
+		VECTORESR3.setBounds(10, 11, 537, 148);
+		panelprincipal.add(VECTORESR3);
+		
+		JButton btnNewButton_3 = new JButton("VECTORES R2");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vectoresr3 v3 = new vectoresr3 ();
+				v3.show();
+			dispose();
+			}
+		});
+		btnNewButton_3.setBounds(10, 176, 537, 148);
+		panelprincipal.add(btnNewButton_3);
+		
+		JButton btnNewButton = new JButton("↓");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 Menu M1 = new Menu();
+                 M1.setVisible(true);
+			}
+		});
+		btnNewButton.setForeground(Color.BLUE);
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btnNewButton.setBackground(Color.BLACK);
+		btnNewButton.setBounds(10, 357, 537, 73);
+		panelprincipal.add(btnNewButton);
+	}
+}
