@@ -93,7 +93,8 @@ public class Menu extends JFrame {
 				
 				
 				
-				//aca
+			   CalculadoraVectores CV1 = new CalculadoraVectores();
+                           CV1.setVisible(true);
 				
 				
 				
