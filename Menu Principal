@@ -1,7 +1,6 @@
 package Grafico;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -64,8 +63,8 @@ public class Menu extends JFrame {
 				
 				
 				
-				//aca
-				
+				CalculadoraEcuaciones CE1 = new CalculadoraEcuaciones();
+                CE1.setVisible(true);				
 				
 				
 			}
