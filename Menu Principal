@@ -65,7 +65,8 @@ public class Menu extends JFrame {
 				
 				CalculadoraEcuaciones CE1 = new CalculadoraEcuaciones();
                 CE1.setVisible(true);				
-				
+				Menu.this.setVisible(false);
+
 				
 			}
 		});
@@ -83,8 +84,9 @@ public class Menu extends JFrame {
 				
 		  
 				CalculadoraMatriz CM1 = new CalculadoraMatriz();
-                            CM1.setVisible(true);
-				
+                CM1.setVisible(true);
+            	Menu.this.setVisible(false);
+
 				
 			}
 		});
@@ -101,8 +103,9 @@ public class Menu extends JFrame {
 				
 				
 			   CalculadoraVectores CV1 = new CalculadoraVectores();
-                           CV1.setVisible(true);
-				
+               CV1.setVisible(true);
+           	   Menu.this.setVisible(false);
+
 				
 				
 			}
@@ -111,7 +114,7 @@ public class Menu extends JFrame {
 		btnvector.setBounds(68, 116, 243, 32);
 		contentPane.add(btnvector);
 		
-		JButton btnbase = new JButton("Operaciones Cotidianas");
+		JButton btnbase = new JButton("Operaciones Algebraicas");
 		btnbase.setForeground(Color.BLACK);
 		btnbase.setBackground(Color.LIGHT_GRAY);
 		btnbase.addActionListener(new ActionListener() {
@@ -121,6 +124,7 @@ public class Menu extends JFrame {
 				
 				CalculadoraBase c1 = new CalculadoraBase();
 				c1.setVisible(true);
+				Menu.this.setVisible(false);
 				
 				
 				
