@@ -92,7 +92,7 @@ public class CalculadoraBase extends JFrame {
 		btndivision.setBounds(220, 328, 45, 50);
 		contentPane.add(btndivision);
 		
-		JButton btncoma = new JButton(",");
+		JButton btncoma = new JButton(".");
 		btncoma.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
