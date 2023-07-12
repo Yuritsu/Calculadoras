@@ -60,6 +60,7 @@ public class CalculadoraMatriz extends JFrame {
     }
 
     public CalculadoraMatriz() {
+    	setTitle("Calculadora Matrices");
     	setForeground(Color.BLACK);
     	setBackground(Color.BLACK);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
