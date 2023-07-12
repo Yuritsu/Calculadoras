@@ -61,7 +61,7 @@ public class vectoresr2 extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 580, 520);
 		panel1 = new JPanel();
-		panel1.setBackground(new Color(27, 27, 27));
+		panel1.setBackground(Color.DARK_GRAY);
 		panel1.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(panel1);
@@ -80,6 +80,7 @@ public class vectoresr2 extends JFrame {
 		panel1.add(lblNewLabel_1);
 		
 		VR1 = new JTextField();
+		VR1.setBackground(Color.LIGHT_GRAY);
 		VR1.setBounds(29, 53, 38, 20);
 		panel1.add(VR1);
 		VR1.setColumns(10);
@@ -103,11 +104,13 @@ public class vectoresr2 extends JFrame {
 		panel1.add(lblNewLabel_1_1_1);
 		
 		VR2 = new JTextField();
+		VR2.setBackground(Color.LIGHT_GRAY);
 		VR2.setBounds(101, 53, 38, 20);
 		panel1.add(VR2);
 		VR2.setColumns(10);
 		
 		VR3 = new JTextField();
+		VR3.setBackground(Color.LIGHT_GRAY);
 		VR3.setColumns(10);
 		VR3.setBounds(171, 53, 38, 20);
 		panel1.add(VR3);
@@ -125,16 +128,19 @@ public class vectoresr2 extends JFrame {
 		panel1.add(lblNewLabel_1_2_1);
 		
 		VR4 = new JTextField();
+		VR4.setBackground(Color.LIGHT_GRAY);
 		VR4.setColumns(10);
 		VR4.setBounds(28, 168, 38, 20);
 		panel1.add(VR4);
 		
 		VR5 = new JTextField();
+		VR5.setBackground(Color.LIGHT_GRAY);
 		VR5.setColumns(10);
 		VR5.setBounds(101, 168, 38, 20);
 		panel1.add(VR5);
 		
 		VR6 = new JTextField();
+		VR6.setBackground(Color.LIGHT_GRAY);
 		VR6.setColumns(10);
 		VR6.setBounds(171, 168, 38, 20);
 		panel1.add(VR6);
@@ -152,6 +158,7 @@ public class vectoresr2 extends JFrame {
 		panel1.add(lblNewLabel_1_1_1_2);
 		
 		JButton btnNewButton_10 = new JButton("C");
+		btnNewButton_10.setBackground(Color.BLACK);
 		btnNewButton_10.setForeground(Color.RED);
 		btnNewButton_10.setFont(new Font("Arial Black", Font.BOLD, 18));
 		btnNewButton_10.addActionListener(new ActionListener() {
@@ -182,7 +189,7 @@ public class vectoresr2 extends JFrame {
 		botonsuma.setFocusTraversalKeysEnabled(false);
 		botonsuma.setFocusPainted(false);
 		botonsuma.setHideActionText(true);
-		botonsuma.setBackground(Color.LIGHT_GRAY);
+		botonsuma.setBackground(Color.BLACK);
 		botonsuma.setForeground(new Color(218, 7, 7));
 		botonsuma.setFont(new Font("Tahoma", Font.PLAIN, 45));
 		botonsuma.addActionListener(new ActionListener() {
@@ -212,7 +219,7 @@ public class vectoresr2 extends JFrame {
 		botonresta.setHideActionText(true);
 		botonresta.setForeground(new Color(218, 7, 7));
 		botonresta.setFont(new Font("Tahoma", Font.PLAIN, 45));
-		botonresta.setBackground(Color.LIGHT_GRAY);
+		botonresta.setBackground(Color.BLACK);
 		botonresta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double num1 = Double.valueOf(VR1.getText());
@@ -258,21 +265,25 @@ public class vectoresr2 extends JFrame {
 		panel1.add(lblNewLabel_1_2_1_1);
 		
 		rt1 = new JTextField();
+		rt1.setBackground(Color.LIGHT_GRAY);
 		rt1.setBounds(282, 129, 39, 20);
 		panel1.add(rt1);
 		rt1.setColumns(10);
 		
 		rt2 = new JTextField();
+		rt2.setBackground(Color.LIGHT_GRAY);
 		rt2.setColumns(10);
 		rt2.setBounds(351, 129, 39, 20);
 		panel1.add(rt2);
 		
 		rt3 = new JTextField();
+		rt3.setBackground(Color.LIGHT_GRAY);
 		rt3.setColumns(10);
 		rt3.setBounds(422, 129, 38, 20);
 		panel1.add(rt3);
 		
 		JButton btnNewButton = new JButton("Producto Escalar");
+		btnNewButton.setForeground(new Color(30, 185, 69));
 		btnNewButton.setFont(new Font("Arial Black", Font.BOLD, 15));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -297,6 +308,7 @@ public class vectoresr2 extends JFrame {
 		panel1.add(rta1_1);
 		
 		rt4 = new JTextField();
+		rt4.setBackground(Color.LIGHT_GRAY);
 		rt4.setColumns(10);
 		rt4.setBounds(98, 341, 39, 20);
 		panel1.add(rt4);
@@ -308,6 +320,7 @@ public class vectoresr2 extends JFrame {
 		panel1.add(lblNewLabel_1_2_1_1_1);
 		
 		JButton btnProductoVectorial = new JButton("Producto Vectorial");
+		btnProductoVectorial.setForeground(new Color(30, 185, 69));
 		btnProductoVectorial.setFont(new Font("Arial Black", Font.BOLD, 15));
 		btnProductoVectorial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -337,6 +350,7 @@ public class vectoresr2 extends JFrame {
 		panel1.add(rta1_2);
 		
 		rt5 = new JTextField();
+		rt5.setBackground(Color.LIGHT_GRAY);
 		rt5.setColumns(10);
 		rt5.setBounds(262, 341, 39, 20);
 		panel1.add(rt5);
@@ -348,6 +362,7 @@ public class vectoresr2 extends JFrame {
 		panel1.add(lblNewLabel_1_1_1_1_1_1);
 		
 		rt6 = new JTextField();
+		rt6.setBackground(Color.LIGHT_GRAY);
 		rt6.setColumns(10);
 		rt6.setBounds(329, 341, 39, 20);
 		panel1.add(rt6);
@@ -359,6 +374,7 @@ public class vectoresr2 extends JFrame {
 		panel1.add(lblNewLabel_1_1_1_2_1_1);
 		
 		rt7 = new JTextField();
+		rt7.setBackground(Color.LIGHT_GRAY);
 		rt7.setColumns(10);
 		rt7.setBounds(400, 341, 38, 20);
 		panel1.add(rt7);
@@ -395,6 +411,7 @@ public class vectoresr2 extends JFrame {
 		panel1.add(lblResultado);
 		
 		VRR1 = new JTextField();
+		VRR1.setBackground(Color.LIGHT_GRAY);
 		VRR1.setHorizontalAlignment(SwingConstants.CENTER);
 		VRR1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		VRR1.setColumns(10);
@@ -402,6 +419,7 @@ public class vectoresr2 extends JFrame {
 		panel1.add(VRR1);
 		
 		JButton btnVectXEscl = new JButton("Vect 1 x Escl");
+		btnVectXEscl.setForeground(new Color(30, 185, 69));
 		btnVectXEscl.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double num1 = Double.valueOf(VR1.getText());
