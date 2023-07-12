@@ -493,7 +493,7 @@ public class CalculadoraBase extends JFrame {
 				
 				Menu M1 = new Menu();
 				M1.setVisible(true);
-				
+				CalculadoraBase.this.setVisible(false);
 				
 			
 			}
