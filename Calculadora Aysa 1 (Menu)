@@ -73,6 +73,8 @@ public class CalculadoraVectores extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				 Menu M1 = new Menu();
                  M1.setVisible(true);
+                 CalculadoraVectores.this.setVisible(false);
+
 			}
 		});
 		btnNewButton.setForeground(Color.BLUE);
