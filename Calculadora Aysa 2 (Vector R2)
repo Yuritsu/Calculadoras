@@ -50,7 +50,7 @@ public class vectoresr3 extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 501, 520);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(27, 27, 27));
+		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -71,6 +71,7 @@ public class vectoresr3 extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		VR21 = new JTextField();
+		VR21.setBackground(Color.LIGHT_GRAY);
 		VR21.setColumns(10);
 		VR21.setBounds(29, 52, 38, 20);
 		contentPane.add(VR21);
@@ -88,6 +89,7 @@ public class vectoresr3 extends JFrame {
 		contentPane.add(lblNewLabel_1_2);
 		
 		VR22 = new JTextField();
+		VR22.setBackground(Color.LIGHT_GRAY);
 		VR22.setColumns(10);
 		VR22.setBounds(101, 52, 38, 20);
 		contentPane.add(VR22);
@@ -105,11 +107,13 @@ public class vectoresr3 extends JFrame {
 		contentPane.add(lblNewLabel_1_2_1);
 		
 		VR23 = new JTextField();
+		VR23.setBackground(Color.LIGHT_GRAY);
 		VR23.setColumns(10);
 		VR23.setBounds(28, 168, 38, 20);
 		contentPane.add(VR23);
 		
 		VR24 = new JTextField();
+		VR24.setBackground(Color.LIGHT_GRAY);
 		VR24.setColumns(10);
 		VR24.setBounds(101, 168, 38, 20);
 		contentPane.add(VR24);
@@ -121,6 +125,7 @@ public class vectoresr3 extends JFrame {
 		contentPane.add(lblNewLabel_1_1_1_1);
 		
 		JButton btnNewButton_10 = new JButton("C");
+		btnNewButton_10.setBackground(Color.BLACK);
 		btnNewButton_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VR21.setText("");
@@ -162,7 +167,7 @@ public class vectoresr3 extends JFrame {
 		botonsuma.setFocusTraversalKeysEnabled(false);
 		botonsuma.setFocusPainted(false);
 		botonsuma.setBorderPainted(false);
-		botonsuma.setBackground(Color.LIGHT_GRAY);
+		botonsuma.setBackground(Color.BLACK);
 		botonsuma.setBounds(29, 216, 74, 48);
 		contentPane.add(botonsuma);
 		
@@ -188,14 +193,14 @@ public class vectoresr3 extends JFrame {
 		botonresta.setFocusable(false);
 		botonresta.setFocusTraversalKeysEnabled(false);
 		botonresta.setFocusPainted(false);
-		botonresta.setBackground(Color.LIGHT_GRAY);
+		botonresta.setBackground(Color.BLACK);
 		botonresta.setBounds(144, 216, 74, 48);
 		contentPane.add(botonresta);
 		
 		JLabel rta1 = new JLabel("(");
 		rta1.setForeground(Color.WHITE);
 		rta1.setFont(new Font("Arial Black", Font.BOLD, 25));
-		rta1.setBounds(262, 118, 12, 31);
+		rta1.setBounds(262, 120, 12, 31);
 		contentPane.add(rta1);
 		
 		JLabel lblNewLabel_1_1_1_1_1 = new JLabel(";");
@@ -211,16 +216,20 @@ public class vectoresr3 extends JFrame {
 		contentPane.add(lblNewLabel_1_2_1_1);
 		
 		rt21 = new JTextField();
+		rt21.setBackground(Color.LIGHT_GRAY);
 		rt21.setColumns(10);
 		rt21.setBounds(282, 129, 39, 20);
 		contentPane.add(rt21);
 		
 		rt22 = new JTextField();
+		rt22.setBackground(Color.LIGHT_GRAY);
 		rt22.setColumns(10);
 		rt22.setBounds(351, 129, 39, 20);
 		contentPane.add(rt22);
 		
 		JButton btnNewButton = new JButton("Producto Escalar");
+		btnNewButton.setBackground(Color.BLACK);
+		btnNewButton.setForeground(new Color(30, 185, 69));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double num21 = Double.valueOf(VR21.getText());
@@ -243,6 +252,7 @@ public class vectoresr3 extends JFrame {
 		contentPane.add(rta1_1);
 		
 		rt23 = new JTextField();
+		rt23.setBackground(Color.LIGHT_GRAY);
 		rt23.setColumns(10);
 		rt23.setBounds(98, 341, 39, 20);
 		contentPane.add(rt23);
@@ -254,6 +264,8 @@ public class vectoresr3 extends JFrame {
 		contentPane.add(lblNewLabel_1_2_1_1_1);
 		
 		JButton btnProductoVectorial = new JButton("Producto Vectorial");
+		btnProductoVectorial.setBackground(Color.BLACK);
+		btnProductoVectorial.setForeground(new Color(30, 185, 69));
 		btnProductoVectorial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double num21 = Double.valueOf(VR21.getText());
@@ -276,6 +288,7 @@ public class vectoresr3 extends JFrame {
 		contentPane.add(rta1_2);
 		
 		rt24 = new JTextField();
+		rt24.setBackground(Color.LIGHT_GRAY);
 		rt24.setColumns(10);
 		rt24.setBounds(282, 341, 39, 20);
 		contentPane.add(rt24);
@@ -318,6 +331,7 @@ public class vectoresr3 extends JFrame {
 		contentPane.add(lblResultado);
 		
 		deter21 = new JTextField();
+		deter21.setBackground(Color.LIGHT_GRAY);
 		deter21.setHorizontalAlignment(SwingConstants.CENTER);
 		deter21.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		deter21.setColumns(10);
@@ -325,6 +339,8 @@ public class vectoresr3 extends JFrame {
 		contentPane.add(deter21);
 		
 		JButton btnVectXEscl = new JButton("Vect 1 x Escl");
+		btnVectXEscl.setForeground(new Color(30, 185, 69));
+		btnVectXEscl.setBackground(Color.BLACK);
 		btnVectXEscl.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double num21 = Double.valueOf(VR21.getText());
