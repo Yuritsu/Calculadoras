@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.SwingConstants;
 
 public class CalculadoraVectores extends JFrame {
 
@@ -37,16 +38,20 @@ public class CalculadoraVectores extends JFrame {
 	 * Create the frame.
 	 */
 	public CalculadoraVectores() {
+		setTitle("Calculadora Vectores");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 573, 480);
+		setBounds(100, 100, 462, 359);
 		panelprincipal = new JPanel();
-		panelprincipal.setBackground(new Color(27, 27, 27));
+		panelprincipal.setBackground(Color.DARK_GRAY);
 		panelprincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(panelprincipal);
 		panelprincipal.setLayout(null);
 		
 		JButton VECTORESR3 = new JButton("VECTORES R3");
+		VECTORESR3.setForeground(Color.BLACK);
+		VECTORESR3.setBackground(Color.LIGHT_GRAY);
+		VECTORESR3.setFont(new Font("Arial", Font.BOLD, 17));
 		VECTORESR3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { 
 				vectoresr2 v2 = new vectoresr2 ();
@@ -54,10 +59,13 @@ public class CalculadoraVectores extends JFrame {
 			dispose();
 			}
 		});
-		VECTORESR3.setBounds(10, 11, 537, 148);
+		VECTORESR3.setBounds(51, 94, 345, 51);
 		panelprincipal.add(VECTORESR3);
 		
 		JButton btnNewButton_3 = new JButton("VECTORES R2");
+		btnNewButton_3.setForeground(Color.BLACK);
+		btnNewButton_3.setBackground(Color.LIGHT_GRAY);
+		btnNewButton_3.setFont(new Font("Arial", Font.BOLD, 17));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				vectoresr3 v3 = new vectoresr3 ();
@@ -65,7 +73,7 @@ public class CalculadoraVectores extends JFrame {
 			dispose();
 			}
 		});
-		btnNewButton_3.setBounds(10, 176, 537, 148);
+		btnNewButton_3.setBounds(51, 156, 345, 51);
 		panelprincipal.add(btnNewButton_3);
 		
 		JButton btnNewButton = new JButton("↓");
@@ -80,7 +88,14 @@ public class CalculadoraVectores extends JFrame {
 		btnNewButton.setForeground(Color.BLUE);
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnNewButton.setBackground(Color.BLACK);
-		btnNewButton.setBounds(10, 357, 537, 73);
+		btnNewButton.setBounds(51, 236, 345, 51);
 		panelprincipal.add(btnNewButton);
+		
+		JLabel lblNewLabel = new JLabel("Menu Vectores");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblNewLabel.setBounds(51, 23, 345, 33);
+		panelprincipal.add(lblNewLabel);
 	}
 }
